@@ -1,0 +1,40 @@
+body 
+{
+background-image:url("../JV1A_RIALLOT_Alexandre_ProjetMiniRPG/Image/Background/Background1.png") ;
+background-repeat: no-repeat;
+background-size: 100%;
+}
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.monstre
+{
+  width: 200px;
+  height: 200px;
+}
+
+#monstre1 
+{
+ display: flex;
+ justify-content: end;
+ align-self: flex-end;
+}
+
+#blockaction {
+    color: white;
+    display:flex;
+    justify-content: center;
+}
+
+#action{
+    display:inline-block;
+    display: flex;
+    justify-content: center;
+}
+
+#barre {
+   width:100%;
+   height:150px;
+}
