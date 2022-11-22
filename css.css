@@ -10,6 +10,8 @@ interface {
     display: flex;
     border: 4px solid red;
     height: 84px;
+    justify-content: space-around;
+    align-items: center;
     
 }
 
@@ -17,13 +19,14 @@ disposition {
   border: 4px solid green;
   height: 400px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 perso {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    background-color: greenyellow;
 }
  
 monstre {
@@ -31,4 +34,17 @@ monstre {
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-end;
+    background-color: aqua;
+}
+
+attaque {
+    background-color: red;
+}
+
+defense {
+    background-color: blue;
+}
+
+special {
+    background-color: purple;
 }
