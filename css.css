@@ -26,7 +26,6 @@ perso {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    background-color: greenyellow;
 }
  
 monstre {
@@ -34,17 +33,45 @@ monstre {
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-end;
-    background-color: aqua;
 }
 
 attaque {
+    display: flex;
+    align-items: center;
     background-color: red;
+    height: 100%;
 }
 
 defense {
+    display: flex;
+    align-items: center;
     background-color: blue;
+    height: 100%;
 }
 
 special {
+    display: flex;
+    align-items: center;
     background-color: purple;
+    height: 100%;
+}
+
+imageperso {
+    background-color: greenyellow;
+
+}
+
+imagemonstre {
+    background-color: aqua;
+
+}
+
+hudperso {
+    display:flex;
+    flex-direction: column;
+}
+
+hudmonstre {
+    display:flex;
+    flex-direction: column;
 }
