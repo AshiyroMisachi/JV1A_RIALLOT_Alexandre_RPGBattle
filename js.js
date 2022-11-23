@@ -8,6 +8,9 @@ texte=document.getElementById("texte");
 
 //recuperation id barre de vie perso
 pvperso1=document.getElementById("vieperso1");
+pvperso2=document.getElementById("vieperso2");
+pvperso3=document.getElementById("vieperso3");
+pvperso4=document.getElementById("vieperso4");
 
 
 //recuperation id image perso
@@ -21,6 +24,7 @@ pvmonstre1=document.getElementById("viemonstre1");
 
 //declation variable
 let compteur = 1;   //variable de compteur tour
+let attaquerandommonstre = 0; //defini le perso que le monstre va attaque
 
 //Fonction de mise en avant des personnages
 function positionnement() {
@@ -53,6 +57,7 @@ function positionnement() {
         imageperso2.style.left = 0;
         imageperso3.style.left = 0;
         imageperso4.style.left = 0;
+        ripostemonstre();
     }
 }
 positionnement()
@@ -60,6 +65,7 @@ positionnement()
 
 //Systeme attaque joueur 
 attaqueperso.onclick = function() {
+    //Attaque Perso 1
     if (compteur == 1){
         compteur += 1;
         pvmonstre1.innerHTML = pvmonstre1.innerHTML-10;
@@ -71,6 +77,7 @@ attaqueperso.onclick = function() {
         setTimeout(reposition,200);
         setTimeout(positionnement,1000);
     }
+    //Attaque Perso 2
     else if (compteur == 2) {
         compteur += 1;
         pvmonstre1.innerHTML = pvmonstre1.innerHTML-10;
@@ -82,6 +89,7 @@ attaqueperso.onclick = function() {
         setTimeout(reposition2,200);
         setTimeout(positionnement,1000);
     }
+    //Attaque Perso 3
     else if (compteur == 3) {
         compteur += 1;
         pvmonstre1.innerHTML = pvmonstre1.innerHTML-10;
@@ -93,6 +101,7 @@ attaqueperso.onclick = function() {
         setTimeout(reposition3,200);
         setTimeout(positionnement,1000);
     }
+    //Attaque Perso 4
     else if (compteur == 4) {
         compteur += 1;
         pvmonstre1.innerHTML = pvmonstre1.innerHTML-10;
@@ -107,3 +116,38 @@ attaqueperso.onclick = function() {
 }
 
 
+//Systeme riposte monstre
+
+function ripostemonstre () {
+    //generation nombre aleatoire
+    attaquerandommonstre =  Math.floor (Math.random() * (5-1)) + 1;
+    console.log(attaquerandommonstre);
+    console.log(compteur);
+    //Riposte Monstre 1
+    if (compteur == 5) {
+        if (attaquerandommonstre == 1) {
+            texte.innerHTML = "Monstre 1 attaque Perso 1 et inflige 15 de degats !";
+            pvperso1.innerHTML = pvperso1.innerHTML-15;
+            compteur += 1;
+            setTimeout(positionnement,1000);
+        }
+        if (attaquerandommonstre == 2) {
+            texte.innerHTML = "Monstre 1 attaque Perso 2 et inflige 15 de degats !";
+            pvperso2.innerHTML = pvperso2.innerHTML-15;
+            compteur += 1;
+            setTimeout(positionnement,1000);
+        }
+        if (attaquerandommonstre == 3) {
+            texte.innerHTML = "Monstre 1 attaque Perso 3 et inflige 15 de degats !";
+            pvperso3.innerHTML = pvperso3.innerHTML-15;
+            compteur += 1;
+            setTimeout(positionnement,1000);
+        }
+        if (attaquerandommonstre == 4) {
+            texte.innerHTML = "Monstre 1 attaque Perso 4 et inflige 15 de degats !";
+            pvperso4.innerHTML = pvperso4.innerHTML-15;
+            compteur += 1;
+            setTimeout(positionnement,1000);
+        }
+    }
+}
