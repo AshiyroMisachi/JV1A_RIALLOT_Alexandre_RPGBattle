@@ -1,7 +1,14 @@
+//recuperation id bouton interface
 attaqueperso = document.getElementById("attaque");
-pvperso1=document.getElementById("vieperso1")
-pvmonstre1=document.getElementById("viemonstre1");
+
+
+//recuperation barre de description combat
 texte=document.getElementById("texte");
+
+
+//recuperation id barre de vie perso
+pvperso1=document.getElementById("vieperso1");
+
 
 //recuperation id image perso
 imageperso1=document.getElementById("imageperso1");
@@ -9,7 +16,11 @@ imageperso2=document.getElementById("imageperso2");
 imageperso3=document.getElementById("imageperso3");
 imageperso4=document.getElementById("imageperso4");
 
-let compteur = 1;
+//recupertation id barre de vie monstre
+pvmonstre1=document.getElementById("viemonstre1");
+
+//declation variable
+let compteur = 1;   //variable de compteur tour
 
 //Fonction de mise en avant des personnages
 function positionnement() {
