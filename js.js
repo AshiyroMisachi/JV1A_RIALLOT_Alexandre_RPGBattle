@@ -9,7 +9,7 @@ attaqueperso.onclick=function() {
     texte.innerHTML = "Perso 1 attaque Monstre 1 et inflige 10 de degats !" ;
     imageperso1.style.left = 10;
     function reposition() {
-        imageperso1.style.right = 10;
+        imageperso1.style.left = 0;
     }
     setTimeout(reposition,200);
     function contreattaque() {
