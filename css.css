@@ -80,3 +80,7 @@ texte {
     display: flex;
     justify-content: center;
 }
+
+#imageperso1{
+    position:relative;
+}
