@@ -122,7 +122,7 @@ attaqueperso.onclick = function() {
         setTimeout(reposition4,200);
         setTimeout(positionnement,1000);
     }
-}
+} 
 
 
 //Systeme riposte monstre
