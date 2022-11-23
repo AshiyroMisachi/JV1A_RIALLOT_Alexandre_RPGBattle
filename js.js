@@ -52,12 +52,21 @@ function positionnement() {
         imageperso3.style.left = 0;
         imageperso4.style.left = 20;
     }
-    else {
+    else  if (compteur == 5) {
         imageperso1.style.left = 0;
         imageperso2.style.left = 0;
         imageperso3.style.left = 0;
         imageperso4.style.left = 0;
         ripostemonstre();
+    }
+    else if (compteur == 6) {
+        ripostemonstre();
+    }
+    else if (compteur == 7) {
+        ripostemonstre();
+    }
+    else {
+        compteur = 1
     }
 }
 positionnement()
@@ -117,12 +126,10 @@ attaqueperso.onclick = function() {
 
 
 //Systeme riposte monstre
-
 function ripostemonstre () {
     //generation nombre aleatoire
     attaquerandommonstre =  Math.floor (Math.random() * (5-1)) + 1;
     console.log(attaquerandommonstre);
-    console.log(compteur);
     //Riposte Monstre 1
     if (compteur == 5) {
         if (attaquerandommonstre == 1) {
@@ -131,20 +138,74 @@ function ripostemonstre () {
             compteur += 1;
             setTimeout(positionnement,1000);
         }
-        if (attaquerandommonstre == 2) {
+        else if (attaquerandommonstre == 2) {
             texte.innerHTML = "Monstre 1 attaque Perso 2 et inflige 15 de degats !";
             pvperso2.innerHTML = pvperso2.innerHTML-15;
             compteur += 1;
             setTimeout(positionnement,1000);
         }
-        if (attaquerandommonstre == 3) {
+        else if (attaquerandommonstre == 3) {
             texte.innerHTML = "Monstre 1 attaque Perso 3 et inflige 15 de degats !";
             pvperso3.innerHTML = pvperso3.innerHTML-15;
             compteur += 1;
             setTimeout(positionnement,1000);
         }
-        if (attaquerandommonstre == 4) {
+        else if (attaquerandommonstre == 4) {
             texte.innerHTML = "Monstre 1 attaque Perso 4 et inflige 15 de degats !";
+            pvperso4.innerHTML = pvperso4.innerHTML-15;
+            compteur += 1;
+            setTimeout(positionnement,1000);
+        }
+    }
+    //Riposte Monstre 2
+    else if (compteur == 6) {
+        if (attaquerandommonstre == 1) {
+            texte.innerHTML = "Monstre 2 attaque Perso 1 et inflige 15 de degats !";
+            pvperso1.innerHTML = pvperso1.innerHTML-15;
+            compteur += 1;
+            setTimeout(positionnement,1000);
+        }
+        else if (attaquerandommonstre == 2) {
+            texte.innerHTML = "Monstre 2 attaque Perso 2 et inflige 15 de degats !";
+            pvperso2.innerHTML = pvperso2.innerHTML-15;
+            compteur += 1;
+            setTimeout(positionnement,1000);
+        }
+        else if (attaquerandommonstre == 3) {
+            texte.innerHTML = "Monstre 2 attaque Perso 3 et inflige 15 de degats !";
+            pvperso3.innerHTML = pvperso3.innerHTML-15;
+            compteur += 1;
+            setTimeout(positionnement,1000);
+        }
+        else if (attaquerandommonstre == 4) {
+            texte.innerHTML = "Monstre 2 attaque Perso 4 et inflige 15 de degats !";
+            pvperso4.innerHTML = pvperso4.innerHTML-15;
+            compteur += 1;
+            setTimeout(positionnement,1000);
+        }
+    }
+    //Riposte Monstre 3
+    else if (compteur == 7) {
+        if (attaquerandommonstre == 1) {
+            texte.innerHTML = "Monstre 3 attaque Perso 1 et inflige 15 de degats !";
+            pvperso1.innerHTML = pvperso1.innerHTML-15;
+            compteur += 1;
+            setTimeout(positionnement,1000);
+        }
+        else if (attaquerandommonstre == 2) {
+            texte.innerHTML = "Monstre 3 attaque Perso 2 et inflige 15 de degats !";
+            pvperso2.innerHTML = pvperso2.innerHTML-15;
+            compteur += 1;
+            setTimeout(positionnement,1000);
+        }
+        else if (attaquerandommonstre == 3) {
+            texte.innerHTML = "Monstre 3 attaque Perso 3 et inflige 15 de degats !";
+            pvperso3.innerHTML = pvperso3.innerHTML-15;
+            compteur += 1;
+            setTimeout(positionnement,1000);
+        }
+        else if (attaquerandommonstre == 4) {
+            texte.innerHTML = "Monstre 3 attaque Perso 4 et inflige 15 de degats !";
             pvperso4.innerHTML = pvperso4.innerHTML-15;
             compteur += 1;
             setTimeout(positionnement,1000);
