@@ -56,17 +56,17 @@ function positionnement() {
     else  if (compteur == 5) {
         imageperso4.style.left = 0;
         imagemonstre1.style.left = -20;
-        ripostemonstre();
+        setTimeout(ripostemonstre,500);
     }
     else if (compteur == 6) {
         imagemonstre1.style.left = 0;
         imagemonstre2.style.left = -20;
-        ripostemonstre();
+        setTimeout(ripostemonstre,500);
     }
     else if (compteur == 7) {
-        ripostemonstre();
         imagemonstre2.style.left = 0;
         imagemonstre3.style.left = -20;
+        setTimeout(ripostemonstre,500);
     }
     else {
         compteur = 1
@@ -160,6 +160,12 @@ function ripostemonstre () {
             compteur += 1;
             setTimeout(positionnement,1000);
         }
+        //Animation Monstre 1
+        imagemonstre1.style.left = -30;
+        function repositionmonstre1() {
+            imagemonstre1.style.left = -20;
+        }
+        setTimeout(repositionmonstre1,200);
     }
     //Riposte Monstre 2
     else if (compteur == 6) {
@@ -187,6 +193,12 @@ function ripostemonstre () {
             compteur += 1;
             setTimeout(positionnement,1000);
         }
+        //Animation Monstre 2
+        imagemonstre2.style.left = -30;
+        function repositionmonstre2() {
+            imagemonstre2.style.left = -20;
+        }
+        setTimeout(repositionmonstre2,200);
     }
     //Riposte Monstre 3
     else if (compteur == 7) {
@@ -214,5 +226,11 @@ function ripostemonstre () {
             compteur += 1;
             setTimeout(positionnement,1000);
         }
+        //Animation Monstre 3
+        imagemonstre3.style.left = -30;
+        function repositionmonstre3() {
+            imagemonstre3.style.left = -20;
+        }
+        setTimeout(repositionmonstre3,200);
     }
 }
