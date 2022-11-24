@@ -21,6 +21,13 @@ imageperso4=document.getElementById("imageperso4");
 
 //recupertation id barre de vie monstre
 pvmonstre1=document.getElementById("viemonstre1");
+pvmonstre2=document.getElementById("viemonstre2");
+pvmonstre3=document.getElementById("viemonstre3");
+
+//recuperation id image monstre
+imagemonstre1=document.getElementById("imagemonstre1");
+imagemonstre2=document.getElementById("imagemonstre2");
+imagemonstre3=document.getElementById("imagemonstre3");
 
 //declation variable
 let compteur = 1;   //variable de compteur tour
@@ -29,10 +36,8 @@ let attaquerandommonstre = 0; //defini le perso que le monstre va attaque
 //Fonction de mise en avant des personnages
 function positionnement() {
     if (compteur == 1) {
+        imagemonstre3.style.left = 0;
         imageperso1.style.left = 20;
-        imageperso2.style.left = 0;
-        imageperso3.style.left = 0;
-        imageperso4.style.left = 0;
     }
     else  if (compteur == 2) {
         imageperso1.style.left = 0;
@@ -41,32 +46,31 @@ function positionnement() {
         imageperso4.style.left = 0;
     }
     else if (compteur == 3){
-        imageperso1.style.left = 0;
         imageperso2.style.left = 0;
         imageperso3.style.left = 20;
-        imageperso4.style.left = 0;
     }
     else if (compteur == 4) {
-        imageperso1.style.left = 0;
-        imageperso2.style.left = 0;
         imageperso3.style.left = 0;
         imageperso4.style.left = 20;
     }
     else  if (compteur == 5) {
-        imageperso1.style.left = 0;
-        imageperso2.style.left = 0;
-        imageperso3.style.left = 0;
         imageperso4.style.left = 0;
+        imagemonstre1.style.left = -20;
         ripostemonstre();
     }
     else if (compteur == 6) {
+        imagemonstre1.style.left = 0;
+        imagemonstre2.style.left = -20;
         ripostemonstre();
     }
     else if (compteur == 7) {
         ripostemonstre();
+        imagemonstre2.style.left = 0;
+        imagemonstre3.style.left = -20;
     }
     else {
         compteur = 1
+        positionnement();
     }
 }
 positionnement()
