@@ -34,7 +34,15 @@ imagemonstre3=document.getElementById("imagemonstre3");
 //declation variable
 let compteur = 1;   //variable de compteur tour
 let attaquerandommonstre = 0; //defini le perso que le monstre va attaque
-let attaquerandomperso = 0; //defini le monstre que le perso va attaque 
+let attaquerandomperso = 0; //defini le monstre que le perso va attaque
+
+//Set up demarrage
+function start() {
+    pvmonstre1.style.visibility = 'hidden';
+    pvmonstre2.style.visibility = 'hidden';
+    pvmonstre3.style.visibility = 'hidden';
+}
+start()
 
 //Fonction de mise en avant des personnages
 function positionnement() {
@@ -285,4 +293,37 @@ function ripostemonstre () {
         }
         setTimeout(repositionmonstre3,200);
     }
+}
+
+//Affichage vie Monstre
+
+imagemonstre1.onmouseover = function() {
+    pvmonstre1.style.visibility = 'visible';
+}
+
+imagemonstre1.onmouseout = function() {
+    pvmonstre1.style.visibility = 'hidden';
+}
+
+imagemonstre2.onmouseover = function() {
+    pvmonstre2.style.visibility = 'visible';
+}
+
+imagemonstre2.onmouseout = function() {
+    pvmonstre2.style.visibility = 'hidden';
+}
+
+imagemonstre3.onmouseover = function() {
+    pvmonstre3.style.visibility = 'visible';
+}
+
+imagemonstre3.onmouseout = function() {
+    pvmonstre3.style.visibility = 'hidden';
+}
+
+
+//Systeme Mort Monstre
+
+function mortmonstre() {
+    
 }
