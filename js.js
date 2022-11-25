@@ -1,3 +1,8 @@
+//recuperation id block html
+affichevictoire = document.getElementById("victoire");
+disposition = document.getElementById("disposition");
+afficheinterface = document.getElementById("interface");
+
 //recuperation id bouton interface
 bouton = document.getElementById("bouton");
 attaqueperso = document.getElementById("attaque");
@@ -50,11 +55,14 @@ function start() {
     pvmonstre1.style.visibility = 'hidden';
     pvmonstre2.style.visibility = 'hidden';
     pvmonstre3.style.visibility = 'hidden';
+    affichevictoire.style.display = 'none';
+
 }
 start()
 
 //Fonction de mise en avant des personnages
 function positionnement() {
+    victoire();
     if (compteur == 1) {
         imagemonstre3.style.left = 0;
         imageperso1.style.left = 20;
@@ -219,7 +227,6 @@ attaqueperso.onclick = function() {
 function ripostemonstre () {
     //generation nombre aleatoire
     attaquerandommonstre =  Math.floor (Math.random() * (5-1)) + 1;
-    console.log(attaquerandommonstre);
     //Riposte Monstre 1
     if (compteur == 5) {
         compteur += 1;
@@ -368,5 +375,14 @@ function mortmonstre() {
     if (hpmonstre3 <= 0) {
         etatmonstre3 = 1;
         imagemonstre3.style.visibility = 'hidden';
+    }
+}
+
+function victoire() {
+    if (etatmonstre1 == 1 && etatmonstre2 == 1 && etatmonstre3 == 1) {
+        affichevictoire.style.display = 'block';
+        disposition.style.display = 'none';
+        afficheinterface.style.display = 'none';
+        texte.style.display = 'none';
     }
 }
