@@ -34,12 +34,15 @@ imagemonstre3=document.getElementById("imagemonstre3");
 //declation variable
 let compteur = 1;   //variable de compteur tour
 let attaquerandommonstre = 0; //defini le perso que le monstre va attaque
+let attaquerandomperso = 0; //defini le monstre que le perso va attaque 
 
 //Fonction de mise en avant des personnages
 function positionnement() {
     if (compteur == 1) {
         imagemonstre3.style.left = 0;
         imageperso1.style.left = 20;
+        bouton.style.visibility = 'visible';
+        texte.innerHTML = "C'est au tour de Perso1, que fait t'il ?";
     }
     else  if (compteur == 2) {
         imageperso1.style.left = 0;
@@ -47,14 +50,19 @@ function positionnement() {
         imageperso3.style.left = 0;
         imageperso4.style.left = 0;
         bouton.style.visibility = 'visible';
+        texte.innerHTML = "C'est au tour de Perso2, que fait t'il ?";
     }
     else if (compteur == 3){
         imageperso2.style.left = 0;
         imageperso3.style.left = 20;
+        bouton.style.visibility = 'visible';
+        texte.innerHTML = "C'est au tour de Perso3, que fait t'il ?";
     }
     else if (compteur == 4) {
         imageperso3.style.left = 0;
         imageperso4.style.left = 20;
+        bouton.style.visibility = 'visible';
+        texte.innerHTML = "C'est au tour de Perso4, que fait t'il ?";
     }
     else  if (compteur == 5) {
         imageperso4.style.left = 0;
@@ -81,12 +89,23 @@ positionnement()
 
 //Systeme attaque joueur 
 attaqueperso.onclick = function() {
+    attaquerandomperso = Math.floor(Math.random() * (4-1)) + 1;
+    bouton.style.visibility = 'hidden';
     //Attaque Perso 1
     if (compteur == 1){
-        bouton.style.visibility = 'hidden';
         compteur += 1;
-        pvmonstre1.innerHTML = pvmonstre1.innerHTML-10;
-        texte.innerHTML = "Perso 1 attaque Monstre 1 et inflige 10 de degats !" ;
+        if (attaquerandomperso == 1) {
+            pvmonstre1.innerHTML = pvmonstre1.innerHTML -10;
+            texte.innerHTML = "Perso1 attaque Monstre1, il perd 10 pv !"
+        }
+        if (attaquerandomperso == 2) {
+            pvmonstre2.innerHTML = pvmonstre2.innerHTML -10;
+            texte.innerHTML = "Perso1 attaque Monstre2, il perd 10 pv !"
+        }
+        if (attaquerandomperso == 3) {
+            pvmonstre3.innerHTML = pvmonstre3.innerHTML -10;
+            texte.innerHTML = "Perso3 attaque Monstre3, il perd 10 pv !"
+        }
         imageperso1.style.left = 30;
         function reposition() {
             imageperso1.style.left = 20
@@ -97,8 +116,18 @@ attaqueperso.onclick = function() {
     //Attaque Perso 2
     else if (compteur == 2) {
         compteur += 1;
-        pvmonstre1.innerHTML = pvmonstre1.innerHTML-10;
-        texte.innerHTML = "Perso 2 attaque Monstre 1 et inflige 10 de degats !";
+        if (attaquerandomperso == 1) {
+            pvmonstre1.innerHTML = pvmonstre1.innerHTML -10;
+            texte.innerHTML = "Perso1 attaque Monstre1, il perd 10 pv !"
+        }
+        if (attaquerandomperso == 2) {
+            pvmonstre2.innerHTML = pvmonstre2.innerHTML -10;
+            texte.innerHTML = "Perso1 attaque Monstre2, il perd 10 pv !"
+        }
+        if (attaquerandomperso == 3) {
+            pvmonstre3.innerHTML = pvmonstre3.innerHTML -10;
+            texte.innerHTML = "Perso3 attaque Monstre3, il perd 10 pv !"
+        }
         imageperso2.style.left = 30;
         function reposition2() {
             imageperso2.style.left = 20;
@@ -109,8 +138,18 @@ attaqueperso.onclick = function() {
     //Attaque Perso 3
     else if (compteur == 3) {
         compteur += 1;
-        pvmonstre1.innerHTML = pvmonstre1.innerHTML-10;
-        texte.innerHTML = "Perso 3 attaque Monstre 1 et inflige 10 de degats !";
+        if (attaquerandomperso == 1) {
+            pvmonstre1.innerHTML = pvmonstre1.innerHTML -10;
+            texte.innerHTML = "Perso1 attaque Monstre1, il perd 10 pv !"
+        }
+        if (attaquerandomperso == 2) {
+            pvmonstre2.innerHTML = pvmonstre2.innerHTML -10;
+            texte.innerHTML = "Perso1 attaque Monstre2, il perd 10 pv !"
+        }
+        if (attaquerandomperso == 3) {
+            pvmonstre3.innerHTML = pvmonstre3.innerHTML -10;
+            texte.innerHTML = "Perso3 attaque Monstre3, il perd 10 pv !"
+        }
         imageperso3.style.left = 30;
         function reposition3() {
             imageperso3.style.left = 20;
@@ -121,9 +160,18 @@ attaqueperso.onclick = function() {
     //Attaque Perso 4
     else if (compteur == 4) {
         compteur += 1;
-        pvmonstre1.innerHTML = pvmonstre1.innerHTML-10;
-        texte.innerHTML = "Perso 4 attaque Monstre 1 et inflige 10 de degats !";
-        imageperso4.style.left = 30;
+        if (attaquerandomperso == 1) {
+            pvmonstre1.innerHTML = pvmonstre1.innerHTML -10;
+            texte.innerHTML = "Perso1 attaque Monstre1, il perd 10 pv !"
+        }
+        if (attaquerandomperso == 2) {
+            pvmonstre2.innerHTML = pvmonstre2.innerHTML -10;
+            texte.innerHTML = "Perso1 attaque Monstre2, il perd 10 pv !"
+        }
+        if (attaquerandomperso == 3) {
+            pvmonstre3.innerHTML = pvmonstre3.innerHTML -10;
+            texte.innerHTML = "Perso3 attaque Monstre1, il perd 10 pv !"
+        }
         function reposition4() {
             imageperso4.style.left = 20;
         } 
