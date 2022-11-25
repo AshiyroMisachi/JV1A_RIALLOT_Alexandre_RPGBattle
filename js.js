@@ -1,5 +1,7 @@
 //recuperation id bouton interface
+bouton = document.getElementById("bouton");
 attaqueperso = document.getElementById("attaque");
+
 
 
 //recuperation barre de description combat
@@ -44,6 +46,7 @@ function positionnement() {
         imageperso2.style.left = 20;
         imageperso3.style.left = 0;
         imageperso4.style.left = 0;
+        bouton.style.visibility = 'visible';
     }
     else if (compteur == 3){
         imageperso2.style.left = 0;
@@ -80,6 +83,7 @@ positionnement()
 attaqueperso.onclick = function() {
     //Attaque Perso 1
     if (compteur == 1){
+        bouton.style.visibility = 'hidden';
         compteur += 1;
         pvmonstre1.innerHTML = pvmonstre1.innerHTML-10;
         texte.innerHTML = "Perso 1 attaque Monstre 1 et inflige 10 de degats !" ;
