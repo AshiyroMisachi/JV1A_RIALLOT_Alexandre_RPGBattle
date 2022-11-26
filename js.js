@@ -32,9 +32,9 @@ pvmonstre2=document.getElementById("viemonstre2");
 pvmonstre3=document.getElementById("viemonstre3");
 
     //Variable pv monstre
-let hpmonstre1 = 10;
-let hpmonstre2 = 10;
-let hpmonstre3 = 10;
+let hpmonstre1 = 50;
+let hpmonstre2 = 50;
+let hpmonstre3 = 50;
     //Variable etat monstre
 let etatmonstre1 = 0;
 let etatmonstre2 = 0;
@@ -112,27 +112,45 @@ function positionnement() {
 positionnement()
 
 
-//Systeme attaque joueur 
+//Systeme detection attaque 
 attaqueperso.onclick = function() {
-    attaquerandomperso = Math.floor(Math.random() * (4-1)) + 1;
+    attaque()
     bouton.style.visibility = 'hidden';
+}
+
+//Systeme attaque joueur 
+function attaque () {
+    attaquerandomperso = Math.floor(Math.random() * (4-1)) + 1;
     //Attaque Perso 1
     if (compteur == 1){
-        compteur += 1;
-        if (attaquerandomperso == 1) {
+        if (attaquerandomperso == 1 && etatmonstre1 == 1){
+            attaque();
+        }
+        else if (attaquerandomperso == 1) {
+            compteur += 1;
             pvmonstre1.innerHTML = pvmonstre1.innerHTML -10;
             hpmonstre1 -= 10;
             texte.innerHTML = "Perso1 attaque Monstre1, il perd 10 pv !"
         }
-        if (attaquerandomperso == 2) {
+
+        if (attaquerandomperso == 2 && etatmonstre2 == 1) {
+            attaque();
+        }
+        else if (attaquerandomperso == 2) {
+            compteur += 1;
             pvmonstre2.innerHTML = pvmonstre2.innerHTML -10;
             hpmonstre2 -= 10;
             texte.innerHTML = "Perso1 attaque Monstre2, il perd 10 pv !"
         }
-        if (attaquerandomperso == 3) {
+
+        if (attaquerandomperso == 3 && etatmonstre3 == 1) {
+            attaque();
+        }
+        else if (attaquerandomperso == 3) {
+            compteur += 1;
             pvmonstre3.innerHTML = pvmonstre3.innerHTML -10;
             hpmonstre3 -=10;
-            texte.innerHTML = "Perso3 attaque Monstre3, il perd 10 pv !"
+            texte.innerHTML = "Perso1 attaque Monstre3, il perd 10 pv !"
         }
         imageperso1.style.left = 30;
         function reposition() {
@@ -144,21 +162,33 @@ attaqueperso.onclick = function() {
     }
     //Attaque Perso 2
     else if (compteur == 2) {
-        compteur += 1;
-        if (attaquerandomperso == 1) {
+        if (attaquerandomperso == 1 && etatmonstre1 == 1) {
+            attaque();
+        }
+        else if (attaquerandomperso == 1) {
+            compteur += 1;
             pvmonstre1.innerHTML = pvmonstre1.innerHTML -10;
             hpmonstre1 -= 10;
-            texte.innerHTML = "Perso1 attaque Monstre1, il perd 10 pv !"
+            texte.innerHTML = "Perso2 attaque Monstre1, il perd 10 pv !"
         }
-        if (attaquerandomperso == 2) {
+
+        if (attaquerandomperso == 2 && etatmonstre2 == 1) {
+            attaque();
+        }
+        else if (attaquerandomperso == 2) {
+            compteur += 1;
             pvmonstre2.innerHTML = pvmonstre2.innerHTML -10;
             hpmonstre2 -= 10;
-            texte.innerHTML = "Perso1 attaque Monstre2, il perd 10 pv !"
+            texte.innerHTML = "Perso2 attaque Monstre2, il perd 10 pv !"
         }
-        if (attaquerandomperso == 3) {
+        if (attaquerandomperso == 3 && etatmonstre3 == 1) {
+            attaque()
+        }
+        else if (attaquerandomperso == 3) {
+            compteur += 1;
             pvmonstre3.innerHTML = pvmonstre3.innerHTML -10;
             hpmonstre3 -=10;
-            texte.innerHTML = "Perso3 attaque Monstre3, il perd 10 pv !"
+            texte.innerHTML = "Perso2 attaque Monstre3, il perd 10 pv !"
         }
         imageperso2.style.left = 30;
         function reposition2() {
@@ -170,18 +200,29 @@ attaqueperso.onclick = function() {
     }
     //Attaque Perso 3
     else if (compteur == 3) {
-        compteur += 1;
-        if (attaquerandomperso == 1) {
+        if (attaquerandomperso == 1 && etatmonstre1 == 1) {
+            attaque();
+        }
+        else if (attaquerandomperso == 1) {
+            compteur += 1;
             pvmonstre1.innerHTML = pvmonstre1.innerHTML -10;
             hpmonstre1 -= 10;
-            texte.innerHTML = "Perso1 attaque Monstre1, il perd 10 pv !"
+            texte.innerHTML = "Perso3 attaque Monstre1, il perd 10 pv !"
         }
-        if (attaquerandomperso == 2) {
+        if (attaquerandomperso == 2 && etatmonstre2 == 1) {
+            attaque();
+        }
+        else if (attaquerandomperso == 2) {
+            compteur += 1;
             pvmonstre2.innerHTML = pvmonstre2.innerHTML -10;
             hpmonstre2 -= 10;
-            texte.innerHTML = "Perso1 attaque Monstre2, il perd 10 pv !"
+            texte.innerHTML = "Perso3 attaque Monstre2, il perd 10 pv !"
         }
-        if (attaquerandomperso == 3) {
+        if (attaquerandomperso == 3 && etatmonstre3 == 1) {
+            attaque();
+        }
+        else if (attaquerandomperso == 3) {
+            compteur += 1;
             pvmonstre3.innerHTML = pvmonstre3.innerHTML -10;
             hpmonstre3 -=10;
             texte.innerHTML = "Perso3 attaque Monstre3, il perd 10 pv !"
@@ -196,21 +237,32 @@ attaqueperso.onclick = function() {
     }
     //Attaque Perso 4
     else if (compteur == 4) {
-        compteur += 1;
-        if (attaquerandomperso == 1) {
+        if (attaquerandomperso == 1 && etatmonstre1 == 1) {
+            attaque();
+        }
+        else if (attaquerandomperso == 1) {
+            compteur += 1;
             pvmonstre1.innerHTML = pvmonstre1.innerHTML -10;
             hpmonstre1 -= 10;
-            texte.innerHTML = "Perso1 attaque Monstre1, il perd 10 pv !"
+            texte.innerHTML = "Perso4 attaque Monstre1, il perd 10 pv !"
         }
-        if (attaquerandomperso == 2) {
+        if (attaquerandomperso == 2 && etatmonstre2 == 1) {
+            attaque();
+        }
+        else if (attaquerandomperso == 2) {
+            compteur += 1;
             pvmonstre2.innerHTML = pvmonstre2.innerHTML -10;
             hpmonstre2 -= 10;
-            texte.innerHTML = "Perso1 attaque Monstre2, il perd 10 pv !"
+            texte.innerHTML = "Perso4 attaque Monstre2, il perd 10 pv !"
+        }
+        if (attaquerandomperso == 3 && etatmonstre3 == 1) {
+            attaque();
         }
         if (attaquerandomperso == 3) {
+            compteur += 1;
             pvmonstre3.innerHTML = pvmonstre3.innerHTML -10;
             hpmonstre3 -=10;
-            texte.innerHTML = "Perso3 attaque Monstre3, il perd 10 pv !"
+            texte.innerHTML = "Perso4 attaque Monstre3, il perd 10 pv !"
         }
         imageperso4.style.left = 30;
         function reposition4() {
@@ -220,7 +272,8 @@ attaqueperso.onclick = function() {
         setTimeout(reposition4,200);
         setTimeout(positionnement,1000);
     }
-} 
+}
+
 
 
 //Systeme riposte monstre
