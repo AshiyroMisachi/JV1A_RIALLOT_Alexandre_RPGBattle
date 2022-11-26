@@ -20,10 +20,10 @@ pvperso2=document.getElementById("vieperso2");
 pvperso3=document.getElementById("vieperso3");
 pvperso4=document.getElementById("vieperso4");
     //Variable pv perso
-let hpperso1 = 10;
-let hpperso2 = 10;
-let hpperso3 = 10;
-let hpperso4 = 10;
+let hpperso1 = 100;
+let hpperso2 = 100;
+let hpperso3 = 100;
+let hpperso4 = 100;
     //Variable etat perso
 let etatperso1 = 0;
 let etatperso2 = 0;
@@ -42,9 +42,9 @@ pvmonstre2=document.getElementById("viemonstre2");
 pvmonstre3=document.getElementById("viemonstre3");
 
     //Variable pv monstre
-let hpmonstre1 = 500;
-let hpmonstre2 = 500;
-let hpmonstre3 = 500;
+let hpmonstre1 = 50;
+let hpmonstre2 = 50;
+let hpmonstre3 = 50;
     //Variable etat monstre
 let etatmonstre1 = 0;
 let etatmonstre2 = 0;
@@ -76,8 +76,13 @@ function positionnement() {
     defaite();
     if (compteur == 1) {
         if (etatperso1 == 0) {
-            imagemonstre3.style.left = 0;
             imageperso1.style.left = 20;
+            imageperso2.style.left = 0;
+            imageperso3.style.left = 0;
+            imageperso4.style.left = 0;
+            imagemonstre1.style.left = 0;
+            imagemonstre2.style.left = 0;
+            imagemonstre3.style.left = 0;
             bouton.style.visibility = 'visible';
             texte.innerHTML = "C'est au tour de Perso1, que fait t'il ?";
         }
@@ -92,6 +97,9 @@ function positionnement() {
             imageperso2.style.left = 20;
             imageperso3.style.left = 0;
             imageperso4.style.left = 0;
+            imagemonstre1.style.left = 0;
+            imagemonstre2.style.left = 0;
+            imagemonstre3.style.left = 0;
             bouton.style.visibility = 'visible';
             texte.innerHTML = "C'est au tour de Perso2, que fait t'il ?";
         }
@@ -102,8 +110,13 @@ function positionnement() {
     }
     else if (compteur == 3){
         if (etatperso3 == 0) {
+            imageperso1.style.left = 0;
             imageperso2.style.left = 0;
             imageperso3.style.left = 20;
+            imageperso4.style.left = 0;
+            imagemonstre1.style.left = 0;
+            imagemonstre2.style.left = 0;
+            imagemonstre3.style.left = 0;
             bouton.style.visibility = 'visible';
             texte.innerHTML = "C'est au tour de Perso3, que fait t'il ?";
         }
@@ -114,8 +127,13 @@ function positionnement() {
     }
     else if (compteur == 4) {
         if (etatperso4 == 0) {
+            imageperso1.style.left = 0;
+            imageperso2.style.left = 0;
             imageperso3.style.left = 0;
             imageperso4.style.left = 20;
+            imagemonstre1.style.left = 0;
+            imagemonstre2.style.left = 0;
+            imagemonstre3.style.left = 0;
             bouton.style.visibility = 'visible';
             texte.innerHTML = "C'est au tour de Perso4, que fait t'il ?";
         }
@@ -125,16 +143,31 @@ function positionnement() {
         }
     }
     else  if (compteur == 5) {
+        imageperso1.style.left = 0;
+        imageperso2.style.left = 0;
+        imageperso3.style.left = 0;
         imageperso4.style.left = 0;
         imagemonstre1.style.left = -20;
+        imagemonstre2.style.left = 0;
+        imagemonstre3.style.left = 0;
         setTimeout(ripostemonstre,500);
     }
     else if (compteur == 6) {
+        imageperso1.style.left = 0;
+        imageperso2.style.left = 0;
+        imageperso3.style.left = 0;
+        imageperso4.style.left = 0;
         imagemonstre1.style.left = 0;
         imagemonstre2.style.left = -20;
+        imagemonstre3.style.left = 0;
         setTimeout(ripostemonstre,500);
     }
     else if (compteur == 7) {
+        imageperso1.style.left = 0;
+        imageperso2.style.left = 0;
+        imageperso3.style.left = 0;
+        imageperso4.style.left = 0;
+        imagemonstre2.style.left = 0;
         imagemonstre2.style.left = 0;
         imagemonstre3.style.left = -20;
         setTimeout(ripostemonstre,500);
@@ -293,7 +326,7 @@ function attaque () {
         if (attaquerandomperso == 3 && etatmonstre3 == 1) {
             attaque();
         }
-        if (attaquerandomperso == 3) {
+        else if (attaquerandomperso == 3) {
             compteur += 1;
             pvmonstre3.innerHTML = pvmonstre3.innerHTML -10;
             hpmonstre3 -=10;
@@ -317,30 +350,46 @@ function ripostemonstre () {
     attaquerandommonstre =  Math.floor (Math.random() * (5-1)) + 1;
     //Riposte Monstre 1
     if (compteur == 5) {
-        compteur += 1;
         if (etatmonstre1 == 0) {
-            if (attaquerandommonstre == 1) {
+            if (attaquerandommonstre == 1 && etatperso1 == 1) {
+                ripostemonstre()
+            }
+            else if (attaquerandommonstre == 1) {
                 texte.innerHTML = "Monstre 1 attaque Perso 1 et inflige 15 de degats !";
                 pvperso1.innerHTML = pvperso1.innerHTML-15;
                 hpperso1 -= 15;
+                compteur += 1;
+            }
+            if (attaquerandommonstre == 2 && etatperso2 == 1) {
+                ripostemonstre()
             }
             else if (attaquerandommonstre == 2) {
                 texte.innerHTML = "Monstre 1 attaque Perso 2 et inflige 15 de degats !";
                 pvperso2.innerHTML = pvperso2.innerHTML-15;
                 hpperso2 -= 15;
+                compteur += 1;
+            }
+            if (attaquerandommonstre == 3 && etatperso3 == 1) {
+                ripostemonstre();
             }
             else if (attaquerandommonstre == 3) {
                 texte.innerHTML = "Monstre 1 attaque Perso 3 et inflige 15 de degats !";
                 pvperso3.innerHTML = pvperso3.innerHTML-15;
                 hpperso3 -= 15;
+                compteur += 1;
             }
-            else if (attaquerandommonstre == 4) {
+            if (attaquerandommonstre == 4 && etatperso4 == 1) {
+                ripostemonstre();
+            }
+            if (attaquerandommonstre == 4) {
                 texte.innerHTML = "Monstre 1 attaque Perso 4 et inflige 15 de degats !";
                 pvperso4.innerHTML = pvperso4.innerHTML-15;
                 hpperso4 -= 15;
+                compteur += 1;
             }
         }
         else {
+            compteur += 1;
             positionnement();
         }
         //Animation Monstre 1
@@ -354,30 +403,46 @@ function ripostemonstre () {
     }
     //Riposte Monstre 2
     else if (compteur == 6) {
-        compteur += 1;
         if (etatmonstre2 == 0) {
-            if (attaquerandommonstre == 1) {
+            if (attaquerandommonstre == 1 && etatperso1 == 1) {
+                ripostemonstre();
+            }
+            else if (attaquerandommonstre == 1) {
                 texte.innerHTML = "Monstre 2 attaque Perso 1 et inflige 15 de degats !";
                 pvperso1.innerHTML = pvperso1.innerHTML-15;
                 hpperso1 -= 15;
+                compteur += 1;
+            }
+            if (attaquerandommonstre == 2 && etatperso2 == 1) {
+                ripostemonstre();
             }
             else if (attaquerandommonstre == 2) {
                 texte.innerHTML = "Monstre 2 attaque Perso 2 et inflige 15 de degats !";
                 pvperso2.innerHTML = pvperso2.innerHTML-15;
                 hpperso2 -= 15;
+                compteur += 1;
+            }
+            if (attaquerandommonstre == 3 && etatperso3 == 1) {
+                ripostemonstre();
             }
             else if (attaquerandommonstre == 3) {
                 texte.innerHTML = "Monstre 2 attaque Perso 3 et inflige 15 de degats !";
                 pvperso3.innerHTML = pvperso3.innerHTML-15;
                 hpperso3 -= 15;
+                compteur += 1;
+            }
+            if (attaquerandommonstre == 4 && etatperso4 == 1) {
+                ripostemonstre();
             }
             else if (attaquerandommonstre == 4) {
                 texte.innerHTML = "Monstre 2 attaque Perso 4 et inflige 15 de degats !";
                 pvperso4.innerHTML = pvperso4.innerHTML-15;
                 hpperso4 -= 15;
+                compteur += 1;
             }
         }
         else {
+            compteur += 1;
             positionnement();
         }
         //Animation Monstre 2
@@ -391,27 +456,42 @@ function ripostemonstre () {
     }
     //Riposte Monstre 3
     else if (compteur == 7) {
-        compteur += 1;
         if (etatmonstre3 == 0) {
-            if (attaquerandommonstre == 1) {
+            if (attaquerandommonstre == 1 && etatperso1 == 1) {
+                ripostemonstre();
+            }
+            else if (attaquerandommonstre == 1) {
                 texte.innerHTML = "Monstre 3 attaque Perso 1 et inflige 15 de degats !";
                 pvperso1.innerHTML = pvperso1.innerHTML-15;
                 hpperso1 -= 15;
+                compteur += 1;
+            }
+            if (attaquerandommonstre == 2 && etatperso2 == 1) {
+                ripostemonstre();
             }
             else if (attaquerandommonstre == 2) {
                 texte.innerHTML = "Monstre 3 attaque Perso 2 et inflige 15 de degats !";
                 pvperso2.innerHTML = pvperso2.innerHTML-15;
                 hpperso2 -= 15;
+                compteur += 1;
+            }
+            if (attaquerandommonstre == 3 && etatperso3 == 1) {
+                ripostemonstre();
             }
             else if (attaquerandommonstre == 3) {
                 texte.innerHTML = "Monstre 3 attaque Perso 3 et inflige 15 de degats !";
                 pvperso3.innerHTML = pvperso3.innerHTML-15;
                 hpperso3 -= 15;
+                compteur += 1;
+            }
+            if (attaquerandommonstre == 4 && etatperso4 == 1) {
+                ripostemonstre();
             }
             else if (attaquerandommonstre == 4) {
                 texte.innerHTML = "Monstre 3 attaque Perso 4 et inflige 15 de degats !";
                 pvperso4.innerHTML = pvperso4.innerHTML-15;
                 hpperso4 -= 15;
+                compteur += 1;
             }
             //Animation Monstre 3
             imagemonstre3.style.left = -30;
@@ -423,6 +503,7 @@ function ripostemonstre () {
             setTimeout(positionnement,1000);
         }
         else {
+            compteur += 1;
             positionnement();
         }
     }
