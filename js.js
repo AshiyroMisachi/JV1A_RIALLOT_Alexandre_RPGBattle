@@ -481,71 +481,101 @@ function special() {
         }
         else {
             texte.innerHTML = "Perso 1 n'a pas assez de mana"
+            bouton.style.visibility = 'hidden';
             setTimeout(positionnement,500);
         }
     }
     else if (compteur == 2) {
-        compteur += 1;
-        attaquerandomperso = Math.floor(Math.random() * (4-1)) + 1;
-            if (attaquerandomperso == 1) {
-                texte.innerHTML = "Perso 2 empoisonne Monstre 1 !";
-                poisonmonstre1 = 3;
-            }
-            else if (attaquerandomperso == 2) {
-                texte.innerHTML = "Perso 2 empoisonne Monstre 2 !";
-                poisonmonstre2 = 3;
-            }
-            else if (attaquerandomperso == 3) {
-                texte.innerHTML = "Perso 3 empoisonne Monstre 3 ! ";
-                poisonmonstre3 = 3;
-            }
-        setTimeout(positionnement,1000);
+        if (manaperso2 > 10) {
+            manaperso2 -= 10;
+            affmanaperso2.innerHTML = affmanaperso2.innerHTML - 10;
+            compteur += 1;
+            attaquerandomperso = Math.floor(Math.random() * (4-1)) + 1;
+                if (attaquerandomperso == 1) {
+                    texte.innerHTML = "Perso 2 empoisonne Monstre 1 !";
+                    poisonmonstre1 = 3;
+                }
+                else if (attaquerandomperso == 2) {
+                    texte.innerHTML = "Perso 2 empoisonne Monstre 2 !";
+                    poisonmonstre2 = 3;
+                }
+                else if (attaquerandomperso == 3) {
+                    texte.innerHTML = "Perso 3 empoisonne Monstre 3 ! ";
+                    poisonmonstre3 = 3;
+                }
+            setTimeout(positionnement,1000); 
+        }
+        else {
+            texte.innerHTML = "Perso 2 n'a pas assez de mana";
+            bouton.style.visibility = 'hidden';
+            setTimeout(positionnement,500);
+        }
+        
     }
     else if (compteur == 3) {
-        texte.innerHTML = "Perso 3 soigne tous les Heros, tout le monde recupere 20 pv !";
-        if (hpperso1 > 80) {
-            hpperso1 = 100;
-            pvperso1.innerHTML = 100;
-        }
+        if (manaperso3 > 25) {
+            manaperso3 -= 25;
+            affmanaperso3.innerHTML = affmanaperso3.innerHTML - 25;
+            texte.innerHTML = "Perso 3 soigne tous les Heros, tout le monde recupere 20 pv !";
+            if (hpperso1 > 80) {
+                hpperso1 = 100;
+                pvperso1.innerHTML = 100;
+            }
+            else {
+                hpperso1 += 20;
+                pvperso1.innerHTML = pvperso1.innerHTML - (-20);
+            }
+            if (hpperso2 > 80) {
+                hpperso2 = 100;
+                pvperso2.innerHTML = 100;
+            }
+            else {
+                hpperso2 += 20;
+                pvperso2.innerHTML = pvperso2.innerHTML - (-20);
+            }
+            if (hpperso3 > 80) {
+                hpperso3 = 100;
+                pvperso3.innerHTML = 100;
+            }
+            else {
+                hpperso3 += 20;
+                pvperso3.innerHTML = pvperso3.innerHTML - (-20);
+            }
+            if (hpperso4 > 80) {
+                hpperso4 = 100;
+                pvperso4.innerHTML = 100;
+            }
+            else {
+                hpperso4 += 20;
+                pvperso4.innerHTML = pvperso4.innerHTML - (-20);
+            }
+            compteur += 1;
+            setTimeout(positionnement,1000);
+            }
         else {
-            hpperso1 += 20;
-            pvperso1.innerHTML = pvperso1.innerHTML - (-20);
+            texte.innerHTML = "Perso 3 n'a pas assez de mana";
+            bouton.style.visibility = 'hidden';
+            setTimeout(positionnement,500);
         }
-        if (hpperso2 > 80) {
-            hpperso2 = 100;
-            pvperso2.innerHTML = 100;
-        }
-        else {
-            hpperso2 += 20;
-            pvperso2.innerHTML = pvperso2.innerHTML - (-20);
-        }
-        if (hpperso3 > 80) {
-            hpperso3 = 100;
-            pvperso3.innerHTML = 100;
-        }
-        else {
-            hpperso3 += 20;
-            pvperso3.innerHTML = pvperso3.innerHTML - (-20);
-        }
-        if (hpperso4 > 80) {
-            hpperso4 = 100;
-            pvperso4.innerHTML = 100;
-        }
-        else {
-            hpperso4 += 20;
-            pvperso4.innerHTML = pvperso4.innerHTML - (-20);
-        }
-        compteur += 1;
-        setTimeout(positionnement,1000);
+        
     }
     else if (compteur == 4) {
-        texte.innerHTML = "Perso 4 protege le groupe, tout le monde est protege !";
-        defperso1 = 1;
-        defperso2 = 1;
-        defperso3 = 1;
-        defperso4 = 1;
-        compteur += 1;
-        setTimeout(positionnement,1000);
+        if (manaperso4 > 20) {
+            manaperso4 -= 20;
+            affmanaperso4.innerHTML = affmanaperso4.innerHTML - 20;
+            texte.innerHTML = "Perso 4 protege le groupe, tout le monde est protege !";
+            defperso1 = 1;
+            defperso2 = 1;
+            defperso3 = 1;
+            defperso4 = 1;
+            compteur += 1;
+            setTimeout(positionnement,1000);
+        }
+        else {
+            texte.innerHTML = "Perso 4 n'a pas assez de mana";
+            bouton.style.visibility = 'hidden';
+            setTimeout (positionnement,500);
+        }
     }
 }
 
