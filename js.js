@@ -519,6 +519,10 @@ function special() {
     }
     else if ( compteur == 4) {
         texte.innerHTML = "Perso 4 protege le groupe, tout le monde est protege !";
+        defperso1 = 1;
+        defperso2 = 1;
+        defperso3 = 1;
+        defperso4 = 1;
         compteur += 1;
         setTimeout(positionnement,1000);
     }
@@ -821,18 +825,22 @@ function mortperso() {
     if (hpperso1 <= 0) {
         etatperso1 = 1;
         imageperso1.style.visibility = 'hidden';
+        pvperso1.style.visibility = 'hidden';
     }
     if (hpperso2 <= 0) {
         etatperso2 = 1;
         imageperso2.style.visibility = 'hidden';
+        pvperso2.style.visibility = 'hidden';
     }
     if (hpperso3 <= 0) {
         etatperso3 = 1;
         imageperso3.style.visibility = 'hidden';
+        pvperso3.style.visibility = 'hidden';
     }
     if (hpperso4 <= 0) {
         etatperso4 = 1;
         imageperso4.style.visibility = 'hidden';
+        pvperso4.style.visibility = 'hidden';
     }
 }
 
