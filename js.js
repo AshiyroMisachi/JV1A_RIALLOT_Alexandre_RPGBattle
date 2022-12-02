@@ -261,6 +261,7 @@ positionnement()
 attaqueperso.onclick = function() {
     attaque()
     bouton.style.visibility = 'hidden';
+    attaqueperso.style.background = 'red';
 }
 
 //Systeme attaque joueur 
@@ -489,19 +490,39 @@ function special() {
         if (manaperso2 >= 10) {
             manaperso2 -= 10;
             affmanaperso2.innerHTML = affmanaperso2.innerHTML - 10;
-            compteur += 1;
             attaquerandomperso = Math.floor(Math.random() * (4-1)) + 1;
                 if (attaquerandomperso == 1) {
-                    texte.innerHTML = "Perso 2 empoisonne Monstre 1 !";
-                    poisonmonstre1 = 3;
+                    if (etatmonstre1 == 0) {
+                        texte.innerHTML = "Perso 2 empoisonne Monstre 1 !";
+                        poisonmonstre1 = 3;
+                        compteur += 1;
+                    }
+                    else {
+                        special();
+                    }
+                    
                 }
                 else if (attaquerandomperso == 2) {
-                    texte.innerHTML = "Perso 2 empoisonne Monstre 2 !";
-                    poisonmonstre2 = 3;
+                    if (etatmonstre2 == 0) {
+                        texte.innerHTML = "Perso 2 empoisonne Monstre 2 !";
+                        poisonmonstre2 = 3;
+                        compteur += 1;
+                    }
+                    else {
+                        special();
+                    }
+                    
                 }
                 else if (attaquerandomperso == 3) {
-                    texte.innerHTML = "Perso 3 empoisonne Monstre 3 ! ";
-                    poisonmonstre3 = 3;
+                    if (etatmonstre3 == 0) {
+                        texte.innerHTML = "Perso 2 empoisonne Monstre 3 ! ";
+                        poisonmonstre3 = 3;
+                        compteur += 1;
+                    }
+                    else {
+                        special();
+                    }
+                    
                 }
             setTimeout(positionnement,1000); 
         }
