@@ -26,6 +26,18 @@ let hpperso1 = 100;
 let hpperso2 = 100;
 let hpperso3 = 100;
 let hpperso4 = 100;
+
+//recuperation id barre de mana perso
+affmanaperso1 = document.getElementById("manaperso1");
+affmanaperso2 = document.getElementById("manaperso2");
+affmanaperso3 = document.getElementById("manaperso3");
+affmanaperso4 = document.getElementById("manaperso4");
+    //Variable mana perso 
+let manaperso1 = 50;
+let manaperso2 = 50;
+let manaperso3 = 50;
+let manaperso4 = 50;
+
     //Variable etat perso
 let etatperso1 = 0;
 let etatperso2 = 0;
@@ -105,7 +117,7 @@ function positionnement() {
             imagemonstre2.style.left = 0;
             imagemonstre3.style.left = 0;
             bouton.style.visibility = 'visible';
-            texte.innerHTML = "C'est au tour de Perso1, que fait t'il ?";
+            texte.innerHTML = "C'est au tour de Perso1, que fait-il ?";
         }
         else {
             compteur += 1;
@@ -122,7 +134,7 @@ function positionnement() {
             imagemonstre2.style.left = 0;
             imagemonstre3.style.left = 0;
             bouton.style.visibility = 'visible';
-            texte.innerHTML = "C'est au tour de Perso2, que fait t'il ?";
+            texte.innerHTML = "C'est au tour de Perso2, que fait-il ?";
         }
         else {
             compteur += 1;
@@ -139,7 +151,7 @@ function positionnement() {
             imagemonstre2.style.left = 0;
             imagemonstre3.style.left = 0;
             bouton.style.visibility = 'visible';
-            texte.innerHTML = "C'est au tour de Perso3, que fait t'il ?";
+            texte.innerHTML = "C'est au tour de Perso3, que fait-il ?";
         }
         else {
             compteur += 1;
@@ -156,7 +168,7 @@ function positionnement() {
             imagemonstre2.style.left = 0;
             imagemonstre3.style.left = 0;
             bouton.style.visibility = 'visible';
-            texte.innerHTML = "C'est au tour de Perso4, que fait t'il ?";
+            texte.innerHTML = "C'est au tour de Perso4, que fait-il ?";
         }
         else {
             compteur += 1;
@@ -451,19 +463,27 @@ specialperso.onclick = function() {
 }
 
 function special() {
-    if ( compteur == 1) {
-        texte.innerHTML = "Perso 1 utilise son special, une enorme boule de feu s'abat sur le terrain, tous les monstres prennent 20 de degats !";
-        compteur += 1;
-        pvmonstre1.innerHTML = pvmonstre1.innerHTML - 20;
-        hpmonstre1 -= 20;
-        pvmonstre2.innerHTML = pvmonstre2.innerHTML - 20;
-        hpmonstre2 -= 20;
-        pvmonstre3.innerHTML = pvmonstre3.innerHTML - 20;
-        hpmonstre3 -= 20;
-        mortmonstre();
-        setTimeout(positionnement,1000);
+    if (compteur == 1) {
+        if (manaperso1 > 30) {
+            manaperso1 -= 30;
+            affmanaperso1.innerHTML = affmanaperso1.innerHTML - 30;
+            texte.innerHTML = "Perso 1 utilise son special, une enorme boule de feu s'abat sur le terrain, tous les monstres prennent 20 de degats !";
+            compteur += 1;
+            pvmonstre1.innerHTML = pvmonstre1.innerHTML - 20;
+            hpmonstre1 -= 20;
+            pvmonstre2.innerHTML = pvmonstre2.innerHTML - 20;
+            hpmonstre2 -= 20;
+            pvmonstre3.innerHTML = pvmonstre3.innerHTML - 20;
+            hpmonstre3 -= 20;
+            mortmonstre();
+            setTimeout(positionnement,1000);
+        }
+        else {
+            texte.innerHTML = "Perso 1 n'a pas assez de mana"
+            setTimeout(positionnement,500);
+        }
     }
-    else if ( compteur == 2) {
+    else if (compteur == 2) {
         compteur += 1;
         attaquerandomperso = Math.floor(Math.random() * (4-1)) + 1;
             if (attaquerandomperso == 1) {
@@ -480,7 +500,7 @@ function special() {
             }
         setTimeout(positionnement,1000);
     }
-    else if ( compteur == 3) {
+    else if (compteur == 3) {
         texte.innerHTML = "Perso 3 soigne tous les Heros, tout le monde recupere 20 pv !";
         if (hpperso1 > 80) {
             hpperso1 = 100;
@@ -517,7 +537,7 @@ function special() {
         compteur += 1;
         setTimeout(positionnement,1000);
     }
-    else if ( compteur == 4) {
+    else if (compteur == 4) {
         texte.innerHTML = "Perso 4 protege le groupe, tout le monde est protege !";
         defperso1 = 1;
         defperso2 = 1;
