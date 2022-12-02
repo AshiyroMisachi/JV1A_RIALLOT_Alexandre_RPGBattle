@@ -482,6 +482,38 @@ function special() {
     }
     else if ( compteur == 3) {
         texte.innerHTML = "Perso 3 soigne tous les Heros, tout le monde recupere 20 pv !";
+        if (hpperso1 > 80) {
+            hpperso1 = 100;
+            pvperso1.innerHTML = 100;
+        }
+        else {
+            hpperso1 += 20;
+            pvperso1.innerHTML = pvperso1.innerHTML - (-20);
+        }
+        if (hpperso2 > 80) {
+            hpperso2 = 100;
+            pvperso2.innerHTML = 100;
+        }
+        else {
+            hpperso2 += 20;
+            pvperso2.innerHTML = pvperso2.innerHTML - (-20);
+        }
+        if (hpperso3 > 80) {
+            hpperso3 = 100;
+            pvperso3.innerHTML = 100;
+        }
+        else {
+            hpperso3 += 20;
+            pvperso3.innerHTML = pvperso3.innerHTML - (-20);
+        }
+        if (hpperso4 > 80) {
+            hpperso4 = 100;
+            pvperso4.innerHTML = 100;
+        }
+        else {
+            hpperso4 += 20;
+            pvperso4.innerHTML = pvperso4.innerHTML - (-20);
+        }
         compteur += 1;
         setTimeout(positionnement,1000);
     }
