@@ -399,7 +399,28 @@ specialperso.onclick = function() {
 
 function special() {
     if ( compteur == 1) {
-        texte.innerHTML = "Perso 1 utilise son special, une enorme boule de feu s'abat sur le terrain !";
+        texte.innerHTML = "Perso 1 utilise son special, une enorme boule de feu s'abat sur le terrain, tous les monstres prennent 20 de degats !";
+        compteur += 1;
+        pvmonstre1.innerHTML = pvmonstre1.innerHTML - 20;
+        hpmonstre1 -= 20;
+        pvmonstre2.innerHTML = pvmonstre2.innerHTML - 20;
+        hpmonstre2 -= 20;
+        pvmonstre3.innerHTML = pvmonstre3.innerHTML - 20;
+        hpmonstre3 -= 20;
+        setTimeout(positionnement,1000);
+    }
+    else if ( compteur == 2) {
+        texte.innerHTML = "Perso 2 empoisonne un monstre aleatoire !";
+        compteur += 1;
+        setTimeout(positionnement,1000);
+    }
+    else if ( compteur == 3) {
+        texte.innerHTML = "Perso 3 soigne tous les Heros, tout le monde recupere 20 pv !";
+        compteur += 1;
+        setTimeout(positionnement,1000);
+    }
+    else if ( compteur == 4) {
+        texte.innerHTML = "Perso 4 protege le groupe, tout le monde est protege !";
         compteur += 1;
         setTimeout(positionnement,1000);
     }
