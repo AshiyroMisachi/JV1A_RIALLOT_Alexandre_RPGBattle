@@ -658,7 +658,8 @@ function special() {
             setTimeout(positionnement,1000);
         }
         else {
-            texte.innerHTML = "Perso 1 n'a pas assez de mana"
+            actionperso1[2] = 0;
+            texte.innerHTML = "Perso 1 n'a pas assez de mana";
             bouton.style.visibility = 'hidden';
             setTimeout(positionnement,500);
         }
@@ -705,6 +706,7 @@ function special() {
             setTimeout(positionnement,1000); 
         }
         else {
+            actionperso2[2] = 0;
             texte.innerHTML = "Perso 2 n'a pas assez de mana";
             bouton.style.visibility = 'hidden';
             setTimeout(positionnement,500);
@@ -753,6 +755,7 @@ function special() {
             setTimeout(positionnement,1000);
             }
         else {
+            actionperso3[2] = 0;
             texte.innerHTML = "Perso 3 n'a pas assez de mana";
             bouton.style.visibility = 'hidden';
             setTimeout(positionnement,500);
@@ -773,6 +776,7 @@ function special() {
             setTimeout(positionnement,1000);
         }
         else {
+            actionperso4[2] = 0;
             texte.innerHTML = "Perso 4 n'a pas assez de mana";
             bouton.style.visibility = 'hidden';
             setTimeout (positionnement,500);
@@ -1229,3 +1233,6 @@ function defaite() {
         texte.style.display = 'none';
     }
 }
+
+
+//Mentiou honorable aux beta tester : Haw0ks & Draide
