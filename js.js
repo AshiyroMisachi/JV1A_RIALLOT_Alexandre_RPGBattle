@@ -9,8 +9,16 @@ bouton = document.getElementById("bouton");
 attaqueperso = document.getElementById("attaque");
 defenseperso = document.getElementById("defense");
 specialperso = document.getElementById("special");
-
-
+    //Liste action utilise Perso
+let actionperso1 = [0,0,0];
+let actionperso2 = [0,0,0];
+let actionperso3 = [0,0,0];
+let actionperso4 = [0,0,0];
+    //Liste action deja utilise Perso
+let actiondifperso1 = [0,0,0];
+let actiondifperso2 = [0,0,0];
+let actiondifperso3 = [0,0,0];
+let actiondifperso4 = [0,0,0];
 
 //recuperation barre de description combat
 texte=document.getElementById("texte");
@@ -100,14 +108,18 @@ function start() {
 }
 start()
 
-//Fonction de mise en avant des personnages
+//Fonction de mise en avant des personnages et de Tour par Tour
 function positionnement() {
+    //Verification de defaite ou de victoire
     victoire();
     defaite();
+    //Tour de Perso 1
     if (compteur == 1) {
+        //Remise à zero de la verification du DoT Poison 
         tourpoisonmonstre1 = 1;
         tourpoisonmonstre2 = 1;
         tourpoisonmonstre3 = 1;
+        //Verification si Perso 1 est en vie
         if (etatperso1 == 0) {
             imageperso1.style.left = 20;
             imageperso2.style.left = 0;
@@ -116,15 +128,18 @@ function positionnement() {
             imagemonstre1.style.left = 0;
             imagemonstre2.style.left = 0;
             imagemonstre3.style.left = 0;
+            couleurinterfaceperso1();
             bouton.style.visibility = 'visible';
-            texte.innerHTML = "C'est au tour de Perso1, que fait-il ?";
+            texte.innerHTML = "C'est au tour de Perso 1, que fait-il ?";
         }
         else {
             compteur += 1;
             positionnement()
         }
     }
+    //Tour de Perso 2
     else  if (compteur == 2) {
+        //Verification si Perso 2 est en vie 
         if (etatperso2 == 0) {
             imageperso1.style.left = 0;
             imageperso2.style.left = 20;
@@ -134,14 +149,17 @@ function positionnement() {
             imagemonstre2.style.left = 0;
             imagemonstre3.style.left = 0;
             bouton.style.visibility = 'visible';
-            texte.innerHTML = "C'est au tour de Perso2, que fait-il ?";
+            couleurinterfaceperso2();
+            texte.innerHTML = "C'est au tour de Perso 2, que fait-il ?";
         }
         else {
             compteur += 1;
             positionnement();
         }
     }
+    //Tour de Perso 3
     else if (compteur == 3){
+        //Verification de si Perso 3 est en vie
         if (etatperso3 == 0) {
             imageperso1.style.left = 0;
             imageperso2.style.left = 0;
@@ -150,6 +168,7 @@ function positionnement() {
             imagemonstre1.style.left = 0;
             imagemonstre2.style.left = 0;
             imagemonstre3.style.left = 0;
+            couleurinterfaceperso3();
             bouton.style.visibility = 'visible';
             texte.innerHTML = "C'est au tour de Perso3, que fait-il ?";
         }
@@ -158,7 +177,9 @@ function positionnement() {
             positionnement();
         }
     }
+    //Tour de Perso 4
     else if (compteur == 4) {
+        //Verification de Perso 4
         if (etatperso4 == 0) {
             imageperso1.style.left = 0;
             imageperso2.style.left = 0;
@@ -167,14 +188,16 @@ function positionnement() {
             imagemonstre1.style.left = 0;
             imagemonstre2.style.left = 0;
             imagemonstre3.style.left = 0;
+            couleurinterfaceperso4();
             bouton.style.visibility = 'visible';
-            texte.innerHTML = "C'est au tour de Perso4, que fait-il ?";
+            texte.innerHTML = "C'est au tour de Perso 4, que fait-il ?";
         }
         else {
             compteur += 1;
             positionnement();
         }
     }
+    //Tour de Monstre 1
     else  if (compteur == 5) {
         imageperso1.style.left = 0;
         imageperso2.style.left = 0;
@@ -185,6 +208,7 @@ function positionnement() {
         imagemonstre3.style.left = 0;
         setTimeout(ripostemonstre,500);
     }
+    //Tour de Monstre 2
     else if (compteur == 6) {
         imageperso1.style.left = 0;
         imageperso2.style.left = 0;
@@ -195,6 +219,7 @@ function positionnement() {
         imagemonstre3.style.left = 0;
         setTimeout(ripostemonstre,500);
     }
+    //Tour de Monstre 3
     else if (compteur == 7) {
         imageperso1.style.left = 0;
         imageperso2.style.left = 0;
@@ -205,6 +230,7 @@ function positionnement() {
         imagemonstre3.style.left = -20;
         setTimeout(ripostemonstre,500);
     }
+    //Tour de degats du poison
     else if (compteur == 8) {
         imageperso1.style.left = 0;
         imageperso2.style.left = 0;
@@ -213,6 +239,7 @@ function positionnement() {
         imagemonstre2.style.left = 0;
         imagemonstre2.style.left = 0;
         imagemonstre3.style.left = 0;
+        //Verification de si Monstre 1 est empoisonne
         if (tourpoisonmonstre1 == 1 && poisonmonstre1 > 0) {
             poisonmonstre1 -= 1;
             tourpoisonmonstre1 = 0;
@@ -222,6 +249,7 @@ function positionnement() {
             mortmonstre();
             setTimeout(positionnement,1000);
         }
+        //Verification de si Monstre 2 est empoisonne 
         else if (tourpoisonmonstre2 == 1 && poisonmonstre2 > 0) {
             poisonmonstre2 -= 1;
             tourpoisonmonstre2 = 0;
@@ -231,6 +259,7 @@ function positionnement() {
             mortmonstre();
             setTimeout(positionnement,1000);
         }
+        //Verification de si Monstre 3 est empoisonne
         else if (tourpoisonmonstre3 == 1 && poisonmonstre3 > 0) {
             poisonmonstre3 -= 1;
             tourpoisonmonstre3 = 0;
@@ -245,6 +274,7 @@ function positionnement() {
             positionnement();
         }  
     }
+    //Remise a zero du tour par tour
     else {
         compteur = 1
         positionnement();
@@ -254,14 +284,61 @@ function positionnement() {
         defperso4 = 0;
     }
 }
+//Lancement du positionnement au chargement de la page
 positionnement()
-
 
 //Systeme detection attaque 
 attaqueperso.onclick = function() {
-    attaque()
+    //Verification de qui attaque au moment de l'appui
+    if (compteur == 1) {
+        //Enregisrement de l'action de Perso 1
+        if (actiondifperso1[0] == 0) {
+            actionperso1[0] = 1;
+            attaque();
+        }
+        //Blocage de Perso 1 si l'action a deja ete effectue le tour d'avant
+        else {
+            texte.innerHTML = "Perso 1 a deja fait cette action le tour d'avant";
+            setTimeout(positionnement,500);
+        }
+    }
+    else if (compteur == 2) {
+        //Enregistrement de l'action de Perso 2
+        if (actiondifperso2[0] == 0) {
+            actionperso2[0] = 1;
+            attaque();
+        }
+        //Blocage de Perso 2 si l'action a deja ete effectue le tour d'avant 
+        else {
+            texte.innerHTML = "Perso 2 a deja fait cette action le tour d'avant";
+            setTimeout(positionnement,500);
+        }
+    }
+    else if (compteur == 3) {
+        //Enregistrement de l'action de Perso 3
+        if (actiondifperso3[0] == 0) {
+            actionperso3[0] = 1;
+            attaque();
+        }
+        //Blocage de Perso 3 si l'action a deja ete effectue le tour d'avant
+        else {
+            texte.innerHTML = "Perso 3 a deja fait cette action le tour d'avant";
+            setTimeout(positionnement,500);
+        }
+    }
+    else if (compteur == 4) {
+        //Enregistrement de l'action de Perso 4
+        if (actiondifperso4[0] == 0) {
+            actionperso4[0] = 1;
+            attaque();
+        }
+        //Blocage de Perso 4 si l'action a deja ete effectue le tour d'avant
+        else {
+            texte.innerHTML = "Perso 4 a deja fait cette action le tour d'avant";
+            setTimeout(positionnement,500);
+        }
+    }
     bouton.style.visibility = 'hidden';
-    attaqueperso.style.background = 'red';
 }
 
 //Systeme attaque joueur 
@@ -424,30 +501,82 @@ function attaque () {
 //Systeme Detection Defense
 
 defenseperso.onclick = function() {
-    defense();
+    //Verification de qui se defend au moment de l'appui
+    if (compteur == 1) {
+        //Enregistrement de l'action de Perso 1
+        if (actiondifperso1[1] == 0) {
+            actionperso1[1] = 1;
+            defense();
+        }
+        //Verification de si Perso 1 a deja fait l'action le tour d'avant
+        else {
+            texte.innerHTML = "Perso 1 a deja fait cette action le tour d'avant";
+            setTimeout(positionnement,500);
+        }
+    }
+    else if (compteur == 2) {
+        //Enregistrement de l'action de Perso 2
+        if (actiondifperso2[1] == 0) {
+            actionperso2[1] = 1;
+            defense();
+        }
+        //Verification de si Perso 2 a deja fait l'action le tour d'avant 
+        else {
+            texte.innerHTML = "Perso 2 a deja fait cette action le tour d'avant";
+            setTimeout(positionnement,500);
+        }
+    }
+    else if (compteur == 3) {
+        //Enregistrement de l'action de Perso 3
+        if (actiondifperso3[1] == 0) {
+            actionperso3[1] = 1;
+            defense();
+        }
+        //Verification de si Perso 3 a deja fait l'action le tour d'avant 
+        else {
+            texte.innerHTML = "Perso 3 a deja fait cette action le tour d'avant";
+            setTimeout(positionnement,500);
+        }
+    }
+    else if (compteur == 4) {
+        //Enregistrement de l'action de Perso 4
+        if (actiondifperso4[1] == 0) {
+            actionperso4[1] = 1;
+            defense();
+        }
+        //Verification de si Perso 4 a deja fait l'action le tour d'avant 
+        else {
+            texte.innerHTML = "Perso 4 a deja fait cette action le tour d'avant";
+            setTimeout(positionnement,500);
+        }
+    }
     bouton.style.visibility = 'hidden';
 }
 
 //Systeme Defense Perso
 function defense() {
+    //Defense de Perso 1
     if ( compteur == 1) {
         defperso1 = 1;
         texte.innerHTML = "Perso 1 choisi de se defendre";
         compteur += 1;
         setTimeout(positionnement,1000);
     }
+    //Defense de Perso 2
     else if ( compteur == 2) {
         defperso2 = 1;
         texte.innerHTML = "Perso 2 choisi de se defendre";
         compteur += 1;
         setTimeout(positionnement,1000);
     }
+    //Defense de Perso 3
     else if ( compteur == 3) {
         defperso3 = 1;
         texte.innerHTML = "Perso 3 choisi de se defendre";
         compteur += 1;
         setTimeout(positionnement,1000);
     }
+    //Defense de Perso 4
     else if ( compteur == 4) {
         defperso4 = 1;
         texte.innerHTML = "Perso 4 choisi de se defendre";
@@ -458,13 +587,61 @@ function defense() {
 
 //Systeme Detection Special
 specialperso.onclick = function() {
-    special();
+    //Verification de qui fait son special au moment de l'appui
+    if (compteur == 1) {
+        //Enregistrement de l'action de Perso 1
+        if (actiondifperso1[2] == 0) {
+            actionperso1[2] = 1;
+            special();
+        }
+        //Verification de si Perso 1 a deja fait l'action le tour d'avant
+        else {
+            texte.innerHTML = "Perso 1 a deja fait cette action le tour d'avant";
+            setTimeout(positionnement,500);
+        }
+    }
+    else if (compteur == 2) {
+        //Enregistrement de l'action de Perso 2
+        if (actiondifperso2[2] == 0) {
+            actionperso2[2] = 1;
+            special();
+        }
+        //Verification de si Perso 2 a deja fait l'action le tour d'avant
+        else {
+            texte.innerHTML = "Perso 2 a deja fait cette action le tour d'avant";
+            setTimeout(positionnement,500);
+        }
+    }
+    else if (compteur == 3) {
+        //Enregistrement de l'action de Perso 3
+        if (actiondifperso3[2] == 0) {
+            actionperso3[2] = 1;
+            special();
+        }
+        //Verification de si Perso 3 a deja fait l'action le tour d'avant
+        else {
+            texte.innerHTML = "Perso 3 a deja fait cette action le tour d'avant";
+            setTimeout(positionnement,500);
+        }
+    }
+    else if (compteur == 4) {
+        //Enregistrement de l'action de Perso 4
+        if (actiondifperso4[2] == 0) {
+            actionperso4[2] = 1;
+            special();
+        }
+        //Verification de si Perso 4 a deja fait l'action le tour d'avant
+        else {
+            texte.innerHTML = "Perso 4 a deja fait cette action le tour d'avant";
+            setTimeout(positionnement,500);
+        }
+    }
     bouton.style.visibility = 'hidden';
 }
 
-
 //Systeme Special Perso
 function special() {
+    //Special de Perso 1, AoE
     if (compteur == 1) {
         if (manaperso1 >= 30) {
             manaperso1 -= 30;
@@ -486,6 +663,7 @@ function special() {
             setTimeout(positionnement,500);
         }
     }
+    //Special de Perso 2, DoT
     else if (compteur == 2) {
         if (manaperso2 >= 10) {
             manaperso2 -= 10;
@@ -533,6 +711,7 @@ function special() {
         }
         
     }
+    //Special de Perso 3, Heal du groupe 
     else if (compteur == 3) {
         if (manaperso3 >= 25) {
             manaperso3 -= 25;
@@ -580,6 +759,7 @@ function special() {
         }
         
     }
+    //Special de Perso 4, Protection du groupe 
     else if (compteur == 4) {
         if (manaperso4 >= 20) {
             manaperso4 -= 20;
@@ -599,7 +779,127 @@ function special() {
         }
     }
 }
-
+//Changement Couleur Action utilise
+    //Perso 1
+function couleurinterfaceperso1 () {
+    if (actionperso1[0] == 1) {
+        attaqueperso.style.background = 'red';
+        defenseperso.style.background = 'green';
+        specialperso.style.background = 'green';
+        actionperso1[0] = 0;
+        actiondifperso1[0] = 1;
+        actiondifperso1[1] = 0;
+        actiondifperso1[2] = 0;
+    }
+    else if (actionperso1[1] == 1) {
+        attaqueperso.style.background = 'green';
+        defenseperso.style.background = 'red';
+        specialperso.style.background = 'green';
+        actionperso1[1] = 0;
+        actiondifperso1[0] = 0;
+        actiondifperso1[1] = 1;
+        actiondifperso1[2] = 0;
+    }
+    else if (actionperso1[2] == 1) {
+        attaqueperso.style.background = 'green';
+        defenseperso.style.background = 'green';
+        specialperso.style.background = 'red';
+        actionperso1[2] = 0;
+        actiondifperso1[0] = 0;
+        actiondifperso1[1] = 0;
+        actiondifperso1[2] = 1;
+    }
+}
+    //Perso 2
+function couleurinterfaceperso2 () {
+    if (actionperso2[0] == 1) {
+        attaqueperso.style.background = 'red';
+        defenseperso.style.background = 'green';
+        specialperso.style.background = 'green';
+        actionperso2[0] = 0;
+        actiondifperso2[0] = 1;
+        actiondifperso2[1] = 0;
+        actiondifperso2[2] = 0;
+    }
+    else if (actionperso2[1] == 1) {
+        attaqueperso.style.background = 'green';
+        defenseperso.style.background = 'red';
+        specialperso.style.background = 'green';
+        actionperso2[1] = 0;
+        actiondifperso2[0] = 0;
+        actiondifperso2[1] = 1;
+        actiondifperso2[2] = 0;
+    }
+    else if (actionperso2[2] == 1) {
+        attaqueperso.style.background = 'green';
+        defenseperso.style.background = 'green';
+        specialperso.style.background = 'red';
+        actionperso2[2] = 0;
+        actiondifperso2[0] = 0;
+        actiondifperso2[1] = 0;
+        actiondifperso2[2] = 1;
+    }
+}
+    //Perso 3
+function couleurinterfaceperso3 () {
+    if (actionperso3[0] == 1) {
+        attaqueperso.style.background = 'red';
+        defenseperso.style.background = 'green';
+        specialperso.style.background = 'green';
+        actionperso3[0] = 0;
+        actiondifperso3[0] = 1;
+        actiondifperso3[1] = 0;
+        actiondifperso3[2] = 0;
+    }
+    else if (actionperso3[1] == 1) {
+        attaqueperso.style.background = 'green';
+        defenseperso.style.background = 'red';
+        specialperso.style.background = 'green';
+        actionperso3[1] = 0;
+        actiondifperso3[0] = 0;
+        actiondifperso3[1] = 1;
+        actiondifperso3[2] = 0;
+    }
+    else if (actionperso3[2] == 1) {
+        attaqueperso.style.background = 'green';
+        defenseperso.style.background = 'green';
+        specialperso.style.background = 'red';
+        actionperso3[2] = 0;
+        actiondifperso3[0] = 0;
+        actiondifperso3[1] = 0;
+        actiondifperso3[2] = 1;
+    }
+}
+    //Perso 4
+function couleurinterfaceperso4 () {
+    if (actionperso4[0] == 1) {
+        attaqueperso.style.background = 'red';
+        defenseperso.style.background = 'green';
+        specialperso.style.background = 'green';
+        actionperso4[0] = 0;
+        actiondifperso4[0] = 1;
+        actiondifperso4[1] = 0;
+        actiondifperso4[2] = 0;
+    }
+    else if (actionperso4[1] == 1) {
+        attaqueperso.style.background = 'green';
+        defenseperso.style.background = 'red';
+        specialperso.style.background = 'green';
+        actionperso4[1] = 0;
+        actiondifperso4[0] = 0;
+        actiondifperso4[1] = 1;
+        actiondifperso4[2] = 0;
+    }
+    else if (actionperso4[2] == 1) {
+        attaqueperso.style.background = 'green';
+        defenseperso.style.background = 'green';
+        specialperso.style.background = 'red';
+        actionperso4[2] = 0;
+        actiondifperso4[0] = 0;
+        actiondifperso4[1] = 0;
+        actiondifperso4[2] = 1;
+    }
+}
 
 //Systeme riposte monstre
 function ripostemonstre () {
@@ -870,14 +1170,17 @@ imagemonstre3.onmouseout = function() {
 function mortmonstre() {
     if (hpmonstre1 <= 0) {
         etatmonstre1 = 1;
+        poisonmonstre1 = 0;
         imagemonstre1.style.visibility = 'hidden';
     }
     if (hpmonstre2 <= 0) {
         etatmonstre2 = 1;
+        poisonmonstre2 = 0;
         imagemonstre2.style.visibility = 'hidden';
     }
     if (hpmonstre3 <= 0) {
         etatmonstre3 = 1;
+        poisonmonstre3 = 0;
         imagemonstre3.style.visibility = 'hidden';
     }
 }
@@ -926,4 +1229,3 @@ function defaite() {
         texte.style.display = 'none';
     }
 }
-
