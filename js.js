@@ -456,12 +456,13 @@ function defense() {
 }
 
 //Systeme Detection Special
-
 specialperso.onclick = function() {
     special();
     bouton.style.visibility = 'hidden';
 }
 
+
+//Systeme Special Perso
 function special() {
     if (compteur == 1) {
         if (manaperso1 > 30) {
