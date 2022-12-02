@@ -465,7 +465,7 @@ specialperso.onclick = function() {
 //Systeme Special Perso
 function special() {
     if (compteur == 1) {
-        if (manaperso1 > 30) {
+        if (manaperso1 >= 30) {
             manaperso1 -= 30;
             affmanaperso1.innerHTML = affmanaperso1.innerHTML - 30;
             texte.innerHTML = "Perso 1 utilise son special, une enorme boule de feu s'abat sur le terrain, tous les monstres prennent 20 de degats !";
@@ -486,7 +486,7 @@ function special() {
         }
     }
     else if (compteur == 2) {
-        if (manaperso2 > 10) {
+        if (manaperso2 >= 10) {
             manaperso2 -= 10;
             affmanaperso2.innerHTML = affmanaperso2.innerHTML - 10;
             compteur += 1;
@@ -513,7 +513,7 @@ function special() {
         
     }
     else if (compteur == 3) {
-        if (manaperso3 > 25) {
+        if (manaperso3 >= 25) {
             manaperso3 -= 25;
             affmanaperso3.innerHTML = affmanaperso3.innerHTML - 25;
             texte.innerHTML = "Perso 3 soigne tous les Heros, tout le monde recupere 20 pv !";
@@ -560,7 +560,7 @@ function special() {
         
     }
     else if (compteur == 4) {
-        if (manaperso4 > 20) {
+        if (manaperso4 >= 20) {
             manaperso4 -= 20;
             affmanaperso4.innerHTML = affmanaperso4.innerHTML - 20;
             texte.innerHTML = "Perso 4 protege le groupe, tout le monde est protege !";
