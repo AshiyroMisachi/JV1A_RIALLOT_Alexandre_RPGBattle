@@ -58,6 +58,16 @@ let etatmonstre1 = 0;
 let etatmonstre2 = 0;
 let etatmonstre3 = 0;
 
+    //Variable etat poison monstre
+let poisonmonstre1 = 0;
+let poisonmonstre2 = 0;
+let poisonmonstre3 = 0;
+
+    //variable tourpoison
+let tourpoisonmonstre1 = 0;
+let tourpoisonmonstre2 = 0;
+let tourpoisonmonstre3 = 0;
+
 //recuperation id image monstre
 imagemonstre1=document.getElementById("imagemonstre1");
 imagemonstre2=document.getElementById("imagemonstre2");
@@ -83,6 +93,9 @@ function positionnement() {
     victoire();
     defaite();
     if (compteur == 1) {
+        tourpoisonmonstre1 = 1;
+        tourpoisonmonstre2 = 1;
+        tourpoisonmonstre3 = 1;
         if (etatperso1 == 0) {
             imageperso1.style.left = 20;
             imageperso2.style.left = 0;
@@ -179,6 +192,46 @@ function positionnement() {
         imagemonstre2.style.left = 0;
         imagemonstre3.style.left = -20;
         setTimeout(ripostemonstre,500);
+    }
+    else if (compteur == 8) {
+        imageperso1.style.left = 0;
+        imageperso2.style.left = 0;
+        imageperso3.style.left = 0;
+        imageperso4.style.left = 0;
+        imagemonstre2.style.left = 0;
+        imagemonstre2.style.left = 0;
+        imagemonstre3.style.left = 0;
+        if (tourpoisonmonstre1 == 1 && poisonmonstre1 > 0) {
+            poisonmonstre1 -= 1;
+            tourpoisonmonstre1 = 0;
+            texte.innerHTML = "Monstre 1 subit 5 de degats du poison !";
+            pvmonstre1.innerHTML = pvmonstre1.innerHTML - 5;
+            hpmonstre1 -= 5;
+            mortmonstre();
+            setTimeout(positionnement,1000);
+        }
+        else if (tourpoisonmonstre2 == 1 && poisonmonstre2 > 0) {
+            poisonmonstre2 -= 1;
+            tourpoisonmonstre2 = 0;
+            texte.innerHTML = "Monstre 2 subit 5 de degats du poison !";
+            pvmonstre2.innerHTML = pvmonstre2.innerHTML - 5;
+            hpmonstre2 -= 5;
+            mortmonstre();
+            setTimeout(positionnement,1000);
+        }
+        else if (tourpoisonmonstre3 == 1 && poisonmonstre3 > 0) {
+            poisonmonstre3 -= 1;
+            tourpoisonmonstre3 = 0;
+            texte.innerHTML = "Monstre 3 subit 5 de degats du poison !";
+            pvmonstre3.innerHTML = pvmonstre3.innerHTML - 5;
+            hpmonstre3 -= 5;
+            mortmonstre();
+            setTimeout(positionnement,1000);
+        }
+        else {
+            compteur += 1;
+            positionnement();
+        }  
     }
     else {
         compteur = 1
@@ -407,11 +460,24 @@ function special() {
         hpmonstre2 -= 20;
         pvmonstre3.innerHTML = pvmonstre3.innerHTML - 20;
         hpmonstre3 -= 20;
+        mortmonstre();
         setTimeout(positionnement,1000);
     }
     else if ( compteur == 2) {
-        texte.innerHTML = "Perso 2 empoisonne un monstre aleatoire !";
         compteur += 1;
+        attaquerandomperso = Math.floor(Math.random() * (4-1)) + 1;
+            if (attaquerandomperso == 1) {
+                texte.innerHTML = "Perso 2 empoisonne Monstre 1 !";
+                poisonmonstre1 = 3;
+            }
+            else if (attaquerandomperso == 2) {
+                texte.innerHTML = "Perso 2 empoisonne Monstre 2 !";
+                poisonmonstre2 = 3;
+            }
+            else if (attaquerandomperso == 3) {
+                texte.innerHTML = "Perso 3 empoisonne Monstre 3 ! ";
+                poisonmonstre3 = 3;
+            }
         setTimeout(positionnement,1000);
     }
     else if ( compteur == 3) {
