@@ -8,6 +8,7 @@ afficheinterface = document.getElementById("interface");
 bouton = document.getElementById("bouton");
 attaqueperso = document.getElementById("attaque");
 defenseperso = document.getElementById("defense");
+specialperso = document.getElementById("special");
 
 
 
@@ -361,6 +362,7 @@ defenseperso.onclick = function() {
     bouton.style.visibility = 'hidden';
 }
 
+//Systeme Defense Perso
 function defense() {
     if ( compteur == 1) {
         defperso1 = 1;
@@ -386,7 +388,21 @@ function defense() {
         compteur += 1;
         setTimeout(positionnement,1000);
     }
+}
 
+//Systeme Detection Special
+
+specialperso.onclick = function() {
+    special();
+    bouton.style.visibility = 'hidden';
+}
+
+function special() {
+    if ( compteur == 1) {
+        texte.innerHTML = "Perso 1 utilise son special, une enorme boule de feu s'abat sur le terrain !";
+        compteur += 1;
+        setTimeout(positionnement,1000);
+    }
 }
 
 
