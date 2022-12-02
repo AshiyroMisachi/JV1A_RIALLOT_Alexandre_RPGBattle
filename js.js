@@ -7,6 +7,7 @@ afficheinterface = document.getElementById("interface");
 //recuperation id bouton interface
 bouton = document.getElementById("bouton");
 attaqueperso = document.getElementById("attaque");
+defenseperso = document.getElementById("defense");
 
 
 
@@ -29,6 +30,12 @@ let etatperso1 = 0;
 let etatperso2 = 0;
 let etatperso3 = 0;
 let etatperso4 = 0;
+
+    //Variable Defense Perso
+let defperso1 = 0;
+let defperso2 = 0;
+let defperso3 = 0;
+let defperso4 = 0;
 
 //recuperation id image perso
 imageperso1=document.getElementById("imageperso1");
@@ -175,6 +182,10 @@ function positionnement() {
     else {
         compteur = 1
         positionnement();
+        defperso1 = 0;
+        defperso2 = 0;
+        defperso3 = 0;
+        defperso4 = 0;
     }
 }
 positionnement()
@@ -343,6 +354,41 @@ function attaque () {
 }
 
 
+//Systeme Detection Defense
+
+defenseperso.onclick = function() {
+    defense();
+    bouton.style.visibility = 'hidden';
+}
+
+function defense() {
+    if ( compteur == 1) {
+        defperso1 = 1;
+        texte.innerHTML = "Perso 1 choisi de se defendre";
+        compteur += 1;
+        setTimeout(positionnement,1000);
+    }
+    else if ( compteur == 2) {
+        defperso2 = 1;
+        texte.innerHTML = "Perso 2 choisi de se defendre";
+        compteur += 1;
+        setTimeout(positionnement,1000);
+    }
+    else if ( compteur == 3) {
+        defperso3 = 1;
+        texte.innerHTML = "Perso 3 choisi de se defendre";
+        compteur += 1;
+        setTimeout(positionnement,1000);
+    }
+    else if ( compteur == 4) {
+        defperso4 = 1;
+        texte.innerHTML = "Perso 4 choisi de se defendre";
+        compteur += 1;
+        setTimeout(positionnement,1000);
+    }
+
+}
+
 
 //Systeme riposte monstre
 function ripostemonstre () {
@@ -355,37 +401,61 @@ function ripostemonstre () {
                 ripostemonstre()
             }
             else if (attaquerandommonstre == 1) {
-                texte.innerHTML = "Monstre 1 attaque Perso 1 et inflige 15 de degats !";
-                pvperso1.innerHTML = pvperso1.innerHTML-15;
-                hpperso1 -= 15;
-                compteur += 1;
+                if ( defperso1 == 1) {
+                    texte.innerHTML = "Monstre 1 attaque Perso 1 mais il se defend et ne subit rien !";
+                    compteur += 1;
+                }
+                else {
+                   texte.innerHTML = "Monstre 1 attaque Perso 1 et inflige 15 de degats !";
+                    pvperso1.innerHTML = pvperso1.innerHTML-15;
+                    hpperso1 -= 15;
+                    compteur += 1; 
+                }
             }
             if (attaquerandommonstre == 2 && etatperso2 == 1) {
                 ripostemonstre()
             }
             else if (attaquerandommonstre == 2) {
-                texte.innerHTML = "Monstre 1 attaque Perso 2 et inflige 15 de degats !";
-                pvperso2.innerHTML = pvperso2.innerHTML-15;
-                hpperso2 -= 15;
-                compteur += 1;
+                if ( defperso2 == 1) {
+                    texte.innerHTML = "Monstre 1 attaque Perso 2 mais il se defend et ne subit rien !";
+                    compteur += 1;
+                }
+                else {
+                    texte.innerHTML = "Monstre 1 attaque Perso 2 et inflige 15 de degats !";
+                    pvperso2.innerHTML = pvperso2.innerHTML-15;
+                    hpperso2 -= 15;
+                    compteur += 1;
+                }
             }
             if (attaquerandommonstre == 3 && etatperso3 == 1) {
                 ripostemonstre();
             }
             else if (attaquerandommonstre == 3) {
-                texte.innerHTML = "Monstre 1 attaque Perso 3 et inflige 15 de degats !";
-                pvperso3.innerHTML = pvperso3.innerHTML-15;
-                hpperso3 -= 15;
-                compteur += 1;
+                if ( defperso3 == 1) {
+                    texte.innerHTML = "Monstre 1 attaque Perso 3 mais il se defend et ne subit rien !";
+                    compteur += 1;
+                }
+                else {
+                    texte.innerHTML = "Monstre 1 attaque Perso 3 et inflige 15 de degats !";
+                    pvperso3.innerHTML = pvperso3.innerHTML-15;
+                    hpperso3 -= 15;
+                    compteur += 1;
+                }
             }
             if (attaquerandommonstre == 4 && etatperso4 == 1) {
                 ripostemonstre();
             }
             if (attaquerandommonstre == 4) {
-                texte.innerHTML = "Monstre 1 attaque Perso 4 et inflige 15 de degats !";
-                pvperso4.innerHTML = pvperso4.innerHTML-15;
-                hpperso4 -= 15;
-                compteur += 1;
+                if ( defperso4 == 1) {
+                    texte.innerHTML = "Monstre 1 attaque Perso 4 mais il se defend et ne subit rien !";
+                    compteur += 1;
+                }
+                else {
+                    texte.innerHTML = "Monstre 1 attaque Perso 4 et inflige 15 de degats !";
+                    pvperso4.innerHTML = pvperso4.innerHTML-15;
+                    hpperso4 -= 15;
+                    compteur += 1;
+                }
             }
         }
         else {
@@ -408,37 +478,61 @@ function ripostemonstre () {
                 ripostemonstre();
             }
             else if (attaquerandommonstre == 1) {
-                texte.innerHTML = "Monstre 2 attaque Perso 1 et inflige 15 de degats !";
-                pvperso1.innerHTML = pvperso1.innerHTML-15;
-                hpperso1 -= 15;
-                compteur += 1;
+                if ( defperso1 == 1) {
+                    texte.innerHTML = "Monstre 2 attaque Perso 1 mais il se defend et ne subit rien !";
+                    compteur += 1;
+                }
+                else {
+                    texte.innerHTML = "Monstre 2 attaque Perso 1 et inflige 15 de degats !";
+                    pvperso1.innerHTML = pvperso1.innerHTML-15;
+                    hpperso1 -= 15;
+                    compteur += 1;
+                }
             }
             if (attaquerandommonstre == 2 && etatperso2 == 1) {
                 ripostemonstre();
             }
             else if (attaquerandommonstre == 2) {
-                texte.innerHTML = "Monstre 2 attaque Perso 2 et inflige 15 de degats !";
-                pvperso2.innerHTML = pvperso2.innerHTML-15;
-                hpperso2 -= 15;
-                compteur += 1;
+                if ( defperso2 == 1) {
+                    texte.innerHTML = "Monstre 2 attaque Perso 2 mais il se defend et ne subit rien !";
+                    compteur += 1;
+                }
+                else {
+                    texte.innerHTML = "Monstre 2 attaque Perso 2 et inflige 15 de degats !";
+                    pvperso2.innerHTML = pvperso2.innerHTML-15;
+                    hpperso2 -= 15;
+                    compteur += 1;
+                }
             }
             if (attaquerandommonstre == 3 && etatperso3 == 1) {
                 ripostemonstre();
             }
             else if (attaquerandommonstre == 3) {
-                texte.innerHTML = "Monstre 2 attaque Perso 3 et inflige 15 de degats !";
-                pvperso3.innerHTML = pvperso3.innerHTML-15;
-                hpperso3 -= 15;
-                compteur += 1;
+                if ( defperso3 == 1) {
+                    texte.innerHTML = "Monstre 2 attaque Perso 3 mais il se defend et ne subit rien !";
+                    compteur += 1;
+                }
+                else {
+                    texte.innerHTML = "Monstre 2 attaque Perso 3 et inflige 15 de degats !";
+                    pvperso3.innerHTML = pvperso3.innerHTML-15;
+                    hpperso3 -= 15;
+                    compteur += 1;
+                }
             }
             if (attaquerandommonstre == 4 && etatperso4 == 1) {
                 ripostemonstre();
             }
             else if (attaquerandommonstre == 4) {
-                texte.innerHTML = "Monstre 2 attaque Perso 4 et inflige 15 de degats !";
-                pvperso4.innerHTML = pvperso4.innerHTML-15;
-                hpperso4 -= 15;
-                compteur += 1;
+                if ( defperso4 == 1) {
+                    texte.innerHTML = "Monstre 2 attaque Perso 4 mais il se defend et ne subit rien !";
+                    compteur += 1;
+                }
+                else {
+                    texte.innerHTML = "Monstre 2 attaque Perso 4 et inflige 15 de degats !";
+                    pvperso4.innerHTML = pvperso4.innerHTML-15;
+                    hpperso4 -= 15;
+                    compteur += 1;
+                }
             }
         }
         else {
@@ -461,37 +555,61 @@ function ripostemonstre () {
                 ripostemonstre();
             }
             else if (attaquerandommonstre == 1) {
-                texte.innerHTML = "Monstre 3 attaque Perso 1 et inflige 15 de degats !";
-                pvperso1.innerHTML = pvperso1.innerHTML-15;
-                hpperso1 -= 15;
-                compteur += 1;
+                if ( defperso1 == 1) {
+                    texte.innerHTML = "Monstre 3 attaque Perso 1 mais il se defend et ne subit rien !";
+                    compteur += 1;
+                }
+                else {
+                    texte.innerHTML = "Monstre 3 attaque Perso 1 et inflige 15 de degats !";
+                    pvperso1.innerHTML = pvperso1.innerHTML-15;
+                    hpperso1 -= 15;
+                    compteur += 1;
+                }
             }
             if (attaquerandommonstre == 2 && etatperso2 == 1) {
                 ripostemonstre();
             }
             else if (attaquerandommonstre == 2) {
-                texte.innerHTML = "Monstre 3 attaque Perso 2 et inflige 15 de degats !";
-                pvperso2.innerHTML = pvperso2.innerHTML-15;
-                hpperso2 -= 15;
-                compteur += 1;
+                if ( defperso2 == 1) {
+                    texte.innerHTML = "Monstre 3 attaque Perso 2 mais il se defend et ne subit rien !";
+                    compteur += 1;
+                }
+                else {
+                    texte.innerHTML = "Monstre 3 attaque Perso 2 et inflige 15 de degats !";
+                    pvperso2.innerHTML = pvperso2.innerHTML-15;
+                    hpperso2 -= 15;
+                    compteur += 1;
+                }
             }
             if (attaquerandommonstre == 3 && etatperso3 == 1) {
                 ripostemonstre();
             }
             else if (attaquerandommonstre == 3) {
-                texte.innerHTML = "Monstre 3 attaque Perso 3 et inflige 15 de degats !";
-                pvperso3.innerHTML = pvperso3.innerHTML-15;
-                hpperso3 -= 15;
-                compteur += 1;
+                if ( defperso3 == 1) {
+                    texte.innerHTML = "Monstre 3 attaque Perso 3 mais il se defend et ne subit rien !";
+                    compteur += 1;
+                }
+                else {
+                    texte.innerHTML = "Monstre 3 attaque Perso 3 et inflige 15 de degats !";
+                    pvperso3.innerHTML = pvperso3.innerHTML-15;
+                    hpperso3 -= 15;
+                    compteur += 1;
+                }
             }
             if (attaquerandommonstre == 4 && etatperso4 == 1) {
                 ripostemonstre();
             }
             else if (attaquerandommonstre == 4) {
-                texte.innerHTML = "Monstre 3 attaque Perso 4 et inflige 15 de degats !";
-                pvperso4.innerHTML = pvperso4.innerHTML-15;
-                hpperso4 -= 15;
-                compteur += 1;
+                if ( defperso4 == 1) {
+                    texte.innerHTML = "Monstre 3 attaque Perso 4 mais il se defend et ne subit rien !";
+                    compteur += 1;
+                }
+                else {
+                    texte.innerHTML = "Monstre 3 attaque Perso 4 et inflige 15 de degats !";
+                    pvperso4.innerHTML = pvperso4.innerHTML-15;
+                    hpperso4 -= 15;
+                    compteur += 1;
+                }
             }
             //Animation Monstre 3
             imagemonstre3.style.left = -30;
@@ -593,3 +711,4 @@ function defaite() {
         texte.style.display = 'none';
     }
 }
+
