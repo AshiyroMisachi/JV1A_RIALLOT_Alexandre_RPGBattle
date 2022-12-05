@@ -3,22 +3,24 @@ body {
     width: 98%;
     height:fit-content;
     align-items: center;
-    background-color: grey;
-    
 }
+
+
 
 interface {
     display: flex;
     border: 4px solid red;
     height: 200px;
-    
 }
 
 disposition {
-  border: 4px solid green;
-  height: 400px;
-  display: flex;
-  justify-content: space-around;
+    background-image: url('../ProjetMiniRPG/Image/BackGround/MainBackGround.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: 4px solid green;
+    height: 400px;
+    display: flex;
+    justify-content: space-around;
 }
 
 perso {
