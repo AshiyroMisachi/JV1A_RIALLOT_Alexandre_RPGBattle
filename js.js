@@ -972,19 +972,19 @@ function ripostemonstre () {
                     compteur += 1;
                 }
             }
+            //Animation Monstre 1
+            imagemonstre1.style.left = -30;
+            function repositionmonstre1() {
+                imagemonstre1.style.left = -20;
+            }
+            mortperso();
+            setTimeout(repositionmonstre1,200);
+            setTimeout(positionnement,1000);  
         }
         else {
             compteur += 1;
             positionnement();
         }
-        //Animation Monstre 1
-        imagemonstre1.style.left = -30;
-        function repositionmonstre1() {
-            imagemonstre1.style.left = -20;
-        }
-        mortperso();
-        setTimeout(repositionmonstre1,200);
-        setTimeout(positionnement,1000);
     }
     //Riposte Monstre 2
     else if (compteur == 6) {
@@ -1049,19 +1049,19 @@ function ripostemonstre () {
                     compteur += 1;
                 }
             }
+            //Animation Monstre 2
+            imagemonstre2.style.left = -30;
+            function repositionmonstre2() {
+                imagemonstre2.style.left = -20;
+            }
+            mortperso();
+            setTimeout(repositionmonstre2,200);
+            setTimeout(positionnement,1000);
         }
         else {
             compteur += 1;
             positionnement();
         }
-        //Animation Monstre 2
-        imagemonstre2.style.left = -30;
-        function repositionmonstre2() {
-            imagemonstre2.style.left = -20;
-        }
-        mortperso();
-        setTimeout(repositionmonstre2,200);
-        setTimeout(positionnement,1000);
     }
     //Riposte Monstre 3
     else if (compteur == 7) {
