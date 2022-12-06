@@ -30,10 +30,10 @@ pvperso2=document.getElementById("vieperso2");
 pvperso3=document.getElementById("vieperso3");
 pvperso4=document.getElementById("vieperso4");
     //Variable pv perso
-let hpperso1 = 100;
-let hpperso2 = 100;
-let hpperso3 = 100;
-let hpperso4 = 100;
+let hpperso1 = 10;
+let hpperso2 = 10;
+let hpperso3 = 10;
+let hpperso4 = 10;
 
 //recuperation id barre de mana perso
 affmanaperso1 = document.getElementById("manaperso1");
