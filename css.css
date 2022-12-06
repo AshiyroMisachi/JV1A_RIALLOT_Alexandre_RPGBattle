@@ -10,13 +10,13 @@ body {
 interface {
     display: flex;
     height: 300px;
-    background-image: url('../ProjetMiniRPG/Image/Interface/InterfaceFOnd.png');
+    background-image: url('Image/Interface/InterfaceFOnd.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
 
 disposition {
-    background-image: url('../ProjetMiniRPG/Image/BackGround/MainBackGround.png');
+    background-image: url('Image/BackGround/MainBackGround.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height: 400px;
@@ -52,7 +52,7 @@ texte {
     height: 50px;
     align-items: center;
     justify-content: center;
-    background-image: url('../ProjetMiniRPG/Image/Interface/InterfaceTexte.png');
+    background-image: url('Image/Interface/InterfaceTexte.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -88,7 +88,7 @@ infoperso {
     flex-direction: column;
     justify-content: space-around;
     width: 25%;
-    background-image: url('../ProjetMiniRPG/Image/Interface/InterfaceInfoPerso.png');
+    background-image: url('Image/Interface/InterfaceInfoPerso.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -127,7 +127,7 @@ bouton {
     width: 75%;
     justify-content: space-around;
     align-items: center;
-    background-image: url('../ProjetMiniRPG/Image/Interface/InterfaceBoutton.png');
+    background-image: url('Image/Interface/InterfaceBoutton.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
