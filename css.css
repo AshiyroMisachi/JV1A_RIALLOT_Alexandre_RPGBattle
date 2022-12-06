@@ -46,9 +46,11 @@ hudmonstre {
 }
 
 texte {
-    border: 4px solid purple;
     display: flex;
     justify-content: center;
+    background-image: url('../ProjetMiniRPG/Image/Interface/InterfaceTexte.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 #imageperso1{
