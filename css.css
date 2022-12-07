@@ -135,11 +135,11 @@ barre {
 }
 
 .viemonstre {
-    background-color: red;
+    background-color: hsl(239, 72%, 48%);
 }
 
 .manaperso {
-    color: blue;
+    color: cyan;
 }
 
 bouton {
