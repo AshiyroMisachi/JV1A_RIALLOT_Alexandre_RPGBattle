@@ -130,8 +130,12 @@ barre {
     flex-direction: column;
 }
 
-.vie {
+.vieperso {
     color: red;
+}
+
+.viemonstre {
+    background-color: red;
 }
 
 .manaperso {

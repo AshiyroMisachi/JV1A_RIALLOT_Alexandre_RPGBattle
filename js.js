@@ -251,8 +251,8 @@ function positionnement() {
             poisonmonstre1 -= 1;
             tourpoisonmonstre1 = 0;
             texte.innerHTML = "Slime 1 subit 5 de degats du poison !";
-            pvmonstre1.innerHTML = pvmonstre1.innerHTML - 5;
             hpmonstre1 -= 5;
+            pvmonstre1.setAttribute("value",hpmonstre1);
             mortmonstre();
             setTimeout(positionnement,1000);
         }
@@ -261,8 +261,8 @@ function positionnement() {
             poisonmonstre2 -= 1;
             tourpoisonmonstre2 = 0;
             texte.innerHTML = "Slime 2 subit 5 de degats du poison !";
-            pvmonstre2.innerHTML = pvmonstre2.innerHTML - 5;
             hpmonstre2 -= 5;
+            pvmonstre2.setAttribute("value",hpmonstre2);
             mortmonstre();
             setTimeout(positionnement,1000);
         }
@@ -271,8 +271,8 @@ function positionnement() {
             poisonmonstre3 -= 1;
             tourpoisonmonstre3 = 0;
             texte.innerHTML = "Slime 3 subit 5 de degats du poison !";
-            pvmonstre3.innerHTML = pvmonstre3.innerHTML - 5;
             hpmonstre3 -= 5;
+            pvmonstre3.setAttribute("value",hpmonstre3);
             mortmonstre();
             setTimeout(positionnement,1000);
         }
@@ -358,8 +358,8 @@ function attaque () {
         }
         else if (attaquerandomperso == 1) {
             compteur += 1;
-            pvmonstre1.innerHTML = pvmonstre1.innerHTML -10;
             hpmonstre1 -= 10;
+            pvmonstre1.setAttribute("value",hpmonstre1);
             texte.innerHTML = "Mage attaque Slime 1, il perd 10 pv !"
         }
 
@@ -368,8 +368,8 @@ function attaque () {
         }
         else if (attaquerandomperso == 2) {
             compteur += 1;
-            pvmonstre2.innerHTML = pvmonstre2.innerHTML -10;
             hpmonstre2 -= 10;
+            pvmonstre2.setAttribute("value",hpmonstre2);
             texte.innerHTML = "Mage attaque Slime 2, il perd 10 pv !"
         }
 
@@ -378,8 +378,8 @@ function attaque () {
         }
         else if (attaquerandomperso == 3) {
             compteur += 1;
-            pvmonstre3.innerHTML = pvmonstre3.innerHTML -10;
             hpmonstre3 -=10;
+            pvmonstre3.setAttribute("value",hpmonstre3);
             texte.innerHTML = "Mage attaque Slime 3, il perd 10 pv !"
         }
         imageperso1.style.left = 30;
@@ -397,8 +397,8 @@ function attaque () {
         }
         else if (attaquerandomperso == 1) {
             compteur += 1;
-            pvmonstre1.innerHTML = pvmonstre1.innerHTML -10;
             hpmonstre1 -= 10;
+            pvmonstre1.setAttribute("value",hpmonstre1);
             texte.innerHTML = "Assassin attaque Slime 1, il perd 10 pv !"
         }
 
@@ -407,8 +407,8 @@ function attaque () {
         }
         else if (attaquerandomperso == 2) {
             compteur += 1;
-            pvmonstre2.innerHTML = pvmonstre2.innerHTML -10;
             hpmonstre2 -= 10;
+            pvmonstre2.setAttribute("value",hpmonstre2);
             texte.innerHTML = "Assassin attaque Slime 2, il perd 10 pv !"
         }
         if (attaquerandomperso == 3 && etatmonstre3 == 1) {
@@ -416,8 +416,8 @@ function attaque () {
         }
         else if (attaquerandomperso == 3) {
             compteur += 1;
-            pvmonstre3.innerHTML = pvmonstre3.innerHTML -10;
             hpmonstre3 -=10;
+            pvmonstre3.setAttribute("value",hpmonstre3);
             texte.innerHTML = "Assassin attaque Slime 3, il perd 10 pv !"
         }
         imageperso2.style.left = 30;
@@ -435,8 +435,8 @@ function attaque () {
         }
         else if (attaquerandomperso == 1) {
             compteur += 1;
-            pvmonstre1.innerHTML = pvmonstre1.innerHTML -10;
             hpmonstre1 -= 10;
+            pvmonstre1.setAttribute("value",hpmonstre1);
             texte.innerHTML = "Pretresse attaque Slime 1, il perd 10 pv !"
         }
         if (attaquerandomperso == 2 && etatmonstre2 == 1) {
@@ -444,8 +444,8 @@ function attaque () {
         }
         else if (attaquerandomperso == 2) {
             compteur += 1;
-            pvmonstre2.innerHTML = pvmonstre2.innerHTML -10;
             hpmonstre2 -= 10;
+            pvmonstre2.setAttribute("value",hpmonstre2);
             texte.innerHTML = "Pretresse attaque Slime 2, il perd 10 pv !"
         }
         if (attaquerandomperso == 3 && etatmonstre3 == 1) {
@@ -453,8 +453,8 @@ function attaque () {
         }
         else if (attaquerandomperso == 3) {
             compteur += 1;
-            pvmonstre3.innerHTML = pvmonstre3.innerHTML -10;
             hpmonstre3 -=10;
+            pvmonstre3.setAttribute("value",hpmonstre3);
             texte.innerHTML = "Pretresse attaque Slime 3, il perd 10 pv !"
         }
         imageperso3.style.left = 30;
@@ -472,8 +472,8 @@ function attaque () {
         }
         else if (attaquerandomperso == 1) {
             compteur += 1;
-            pvmonstre1.innerHTML = pvmonstre1.innerHTML -10;
             hpmonstre1 -= 10;
+            pvmonstre1.setAttribute("value",hpmonstre1);
             texte.innerHTML = "Paladin attaque Slime 1, il perd 10 pv !"
         }
         if (attaquerandomperso == 2 && etatmonstre2 == 1) {
@@ -481,8 +481,8 @@ function attaque () {
         }
         else if (attaquerandomperso == 2) {
             compteur += 1;
-            pvmonstre2.innerHTML = pvmonstre2.innerHTML -10;
             hpmonstre2 -= 10;
+            pvmonstre2.setAttribute("value",hpmonstre2);
             texte.innerHTML = "Paladin attaque Slime 2, il perd 10 pv !"
         }
         if (attaquerandomperso == 3 && etatmonstre3 == 1) {
@@ -490,8 +490,8 @@ function attaque () {
         }
         else if (attaquerandomperso == 3) {
             compteur += 1;
-            pvmonstre3.innerHTML = pvmonstre3.innerHTML -10;
             hpmonstre3 -=10;
+            pvmonstre3.setAttribute("value",hpmonstre3);
             texte.innerHTML = "Paladin attaque Slime 3, il perd 10 pv !"
         }
         imageperso4.style.left = 30;
@@ -655,12 +655,12 @@ function special() {
             affmanaperso1.innerHTML = affmanaperso1.innerHTML - 30;
             texte.innerHTML = "Mage utilise son special, une enorme boule de feu s'abat sur le terrain, tous les monstres prennent 20 de degats !";
             compteur += 1;
-            pvmonstre1.innerHTML = pvmonstre1.innerHTML - 20;
             hpmonstre1 -= 20;
-            pvmonstre2.innerHTML = pvmonstre2.innerHTML - 20;
+            pvmonstre1.setAttribute("value",hpmonstre1);
             hpmonstre2 -= 20;
-            pvmonstre3.innerHTML = pvmonstre3.innerHTML - 20;
+            pvmonstre2.setAttribute("value",hpmonstre2);
             hpmonstre3 -= 20;
+            pvmonstre3.setAttribute("value",hpmonstre3);
             mortmonstre();
             setTimeout(positionnement,1000);
         }
