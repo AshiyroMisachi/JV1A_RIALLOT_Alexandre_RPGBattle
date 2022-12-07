@@ -86,7 +86,7 @@ texte {
 infoperso {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     width: 25%;
     background-image: url('Image/Interface/InterfaceInfoPerso.png');
     background-repeat: no-repeat;
@@ -94,38 +94,48 @@ infoperso {
 }
 
 infoperso1 {
-    color: #000884;
+    color: black;
     font-size: larger;
-    -webkit-text-stroke: 1px black;
     display: flex;
-    align-items:flex-start;
     justify-content: space-around;
+    margin: 9px;
 }
 
 infoperso2 {
-    color: #000884;
+    color: black;
+    font-size: larger;
     display: flex;
-    align-items:flex-start;
     justify-content: space-around;
+    margin: 9px;
 }
 
 infoperso3 {
-    color: #000884;
+    color: black;
+    font-size: larger;
     display: flex;
-    align-items:flex-start;
     justify-content: space-around;
+    margin: 9px;
 }
 
 infoperso4 {
-    color: #000884;
+    color: black;
+    font-size: larger;
     display: flex;
-    align-items:flex-start;
     justify-content: space-around;
+    margin: 9px;
 }
 
 barre {
     display: flex;
     flex-direction: column;
+}
+
+.vie {
+    color: red;
+}
+
+.manaperso {
+    color: blue;
 }
 
 bouton {
