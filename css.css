@@ -5,6 +5,8 @@ body {
     align-items: center;
 }
 
+
+
 interface {
     display: flex;
     height: 300px;
@@ -133,11 +135,11 @@ barre {
 }
 
 .viemonstre {
-    background-color: hsl(239, 72%, 48%);
+    background-color: red;
 }
 
 .manaperso {
-    color: cyan;
+    color: blue;
 }
 
 bouton {
@@ -154,4 +156,3 @@ button {
     height: 50px;
     background-color: green;
 }
-

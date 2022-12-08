@@ -8,32 +8,33 @@
     <disposition id="disposition">
         <perso>
             <hudperso id="perso1">
-                <imageperso id="imageperso1"> 
-                    <img src="../ProjetMiniRPG/Image/Character/Mage.png">
-                </imageperso>
+                <imageperso id="imageperso1"> <img src="Image/Character/Mage.png"> </imageperso>
             </hudperso>
             <hudperso id="perso2">
-                <imageperso id="imageperso2"> <img src="../ProjetMiniRPG/Image/Character/Assassin.png"> </imageperso>
+                <imageperso id="imageperso2"> <img src="Image/Character/Assassin.png"> </imageperso>
             </hudperso>
             <hudperso id="perso3">
-                <imageperso id="imageperso3"> Perso3 </imageperso>
+                <imageperso id="imageperso3"> <img src="Image/Character/Pretresse.png"> </imageperso>
             </hudperso>
             <hudperso id="perso4">
-                <imageperso id="imageperso4"> Perso4 </imageperso>
+                <imageperso id="imageperso4"> <img src="Image/Character/Paladin.png"> </imageperso>
             </hudperso>
         </perso>
         <monstre>
             <hudmonstre id="monstre1">
-                <viemonstre id="viemonstre1"> 50 </viemonstre>
-                <imagemonstre id="imagemonstre1"> Monstre1 </imagemonstre>
+                <nommonnstre id="nommonstre1"> Slime 1</nommonnstre>
+                <progress class="viemonstre" id="viemonstre1"  max="50" value="50" style="accent-color: rgb (255,0,0)"> 50 </progress>
+                <imagemonstre id="imagemonstre1"> <img src="Image/Monster/Slime.png" height="50px" width="50px"> </imagemonstre>
             </hudmonstre>
             <hudmonstre id="monstre2">
-                <viemonstre id="viemonstre2"> 50 </viemonstre>
-                <imagemonstre id="imagemonstre2"> Monstre2 </imagemonstre>
+                <nommonnstre id="nommonstre2"> Slime 2</nommonnstre>
+                <progress class="viemonstre" id="viemonstre2" max="50" value="50"> 50 </progress>
+                <imagemonstre id="imagemonstre2"> <img src="Image/Monster/Slime.png" height="50px" width="50px"> </imagemonstre>
             </hudmonstre>
             <hudmonstre id="monstre3">
-                <viemonstre id="viemonstre3"> 50 </viemonstre>
-                <imagemonstre id="imagemonstre3"> Monstre3 </imagemonstre>
+                <nommonnstre id="nommonstre3"> Slime 3</nommonnstre>
+                <progress class="viemonstre" id="viemonstre3" max="50" value="50"> 50 </progress>
+                <imagemonstre id="imagemonstre3"> <img src="Image/Monster/Slime.png" height="50px" width="50px"> </imagemonstre>
             </hudmonstre>
         </monstre>
     </disposition>
@@ -42,43 +43,43 @@
     </texte>
     <interface id="interface">
         <infoperso>
-            <infoperso1>
+            <infoperso1 >
                 <nomperso>
                     Mage
                 </nomperso>
                 <barre>
-                    <vieperso id="vieperso1">
+                    <vieperso class="vieperso" id="vieperso1">
                         100
                     </vieperso>
-                    <mana id="manaperso1">
-                        50
+                    <mana class="manaperso" id="manaperso1">
+                       50
                     </mana>
                 </barre>
             </infoperso1>
 
             <infoperso2>
                 <nomperso>
-                    Perso 2
+                    Assassin
                 </nomperso>
                 <barre>
-                    <vieperso id="vieperso2">
+                    <vieperso class="vieperso" id="vieperso2">
                         100
                     </vieperso>
-                    <mana id="manaperso2">
-                        50
+                    <mana class="manaperso" id="manaperso2">
+                       50
                     </mana>
                 </barre>
             </infoperso2>
 
             <infoperso3>
                 <nomperso>
-                    Perso 3
+                    Pretresse
                 </nomperso>
                 <barre>
-                    <vieperso id="vieperso3">
+                    <vieperso class="vieperso" id="vieperso3">
                         100
                     </vieperso>
-                    <mana id="manaperso3">
+                    <mana class="manaperso" id="manaperso3">
                         50
                     </mana>
                 </barre>
@@ -86,13 +87,13 @@
 
             <infoperso4>
                 <nomperso>
-                    Perso 4
+                    Paladin
                 </nomperso>
                 <barre>
-                    <vieperso id="vieperso4">
+                    <vieperso class="vieperso" id="vieperso4">
                         100
                     </vieperso>
-                    <mana id="manaperso4">
+                    <mana class="manaperso" id="manaperso4">
                         50
                     </mana>
                 </barre>
@@ -112,9 +113,9 @@
         </bouton>
     </interface>
     <victoire id="victoire">
-        <img src="../ProjetMiniRPG/Image/BackGround/PC Computer - Cuphead Dont Deal With the Devil - Victory.png" width="1210" height="600" >
+        <img src="Image/BackGround/EcranVictoire.png" height="600px" width="100%">
     </victoire>
     <defaite id="defaite">
-        <img  src="../ProjetMiniRPG/Image/BackGround/EcranDefaite.png" width="1210" height="600">
+        <img src="Image/BackGround/EcranDefaite.png" height="600px" width="100%">
     </defaite>
 </body>
