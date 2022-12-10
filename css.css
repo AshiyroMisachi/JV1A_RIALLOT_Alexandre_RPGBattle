@@ -5,8 +5,6 @@ body {
     align-items: center;
 }
 
-
-
 interface {
     display: flex;
     height: 300px;
@@ -132,10 +130,6 @@ barre {
 
 .vieperso {
     color: red;
-}
-
-.viemonstre {
-    background-color: red;
 }
 
 .manaperso {

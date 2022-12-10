@@ -112,8 +112,8 @@ function start() {
     nommonstre3.style.visibility = 'hidden';
     affichevictoire.style.display = 'none';
     affichedefaite.style.display = 'none';
+    bouton.style.visibility = 'hidden';
 }
-start()
 
 //Fonction de mise en avant des personnages et de Tour par Tour
 function positionnement() {
@@ -291,8 +291,7 @@ function positionnement() {
         defperso4 = 0;
     }
 }
-//Lancement du positionnement au chargement de la page
-positionnement()
+
 
 //Systeme detection attaque 
 attaqueperso.onclick = function() {
@@ -1249,3 +1248,9 @@ function defaite() {
 
 
 //Mentiou honorable aux beta tester : Haw0ks & Draide
+
+
+
+start()
+//Lancement du positionnement au chargement de la page
+setTimeout(positionnement,2000);
